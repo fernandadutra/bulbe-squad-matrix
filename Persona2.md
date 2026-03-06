@@ -14,4 +14,4 @@ FRUSTRAÇÕES:
 COMPORTAMENTOS DIGITAIS:
 - Conhecimento de plataformas e tecnologias necessárias para gerir o mercado.
 
-FRASE - CHAVE: "Concervador porem aberto a explorar novos horizontes"
+FRASE - CHAVE: "Conservador porem aberto a explorar novos horizontes"
