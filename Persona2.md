@@ -1,8 +1,8 @@
-PERSONA: José da Silva
+PERSONA: Alexandre Macedo
 IDADE: 56 anos
-PROFISSÃO: Dono de mercado local
+PROFISSÃO: Dono de supermercado de rede 
 CIDADE: Belo Horizonte
-RENDA ESTIMADA: 15 -18 mil/mês
+RENDA ESTIMADA: 200 mil mensal 
 
 OBJETIVOS:
 - Reduzir as despesas com energia no negócio.
