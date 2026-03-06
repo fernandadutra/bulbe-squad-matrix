@@ -1,5 +1,5 @@
 PERSONA: Helena 
-Idade: 35 | Profissão: Bancária | Cidade: São Paulo
+Idade: 35 | Profissão: Bancária | Cidade: Belo Horizonte
 Renda estimada: R$20.000,00 | Dispositivo preferido: Mobile
 
 OBJETIVOS:
