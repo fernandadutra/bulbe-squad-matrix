@@ -16,6 +16,7 @@ D04. Baixa usuabilidade.
    Fala 1:"Criamos o APP para melhorar a rastreabilidade dos dados dos clientes" - Fala 2:"O APP é só para clientes cadastrados(já recebem a conta Bulbe)"
    Contexto: O APP está em desenvolvimento e estão sendo feitos remendos no site para cobrir o APP.
    Relação: Tem relação com a D06, o APP precisa funcionar bem no celular e ser fácil de acessar.
+   
 D05. Contrução de confiança.
    Fala 1:"Os Leads não confiam na Bulbe no primeiro contato" - Fala 2:"A confiança só aumenta quando é por indicação de amigos ou de empresa"
    Contexto: Parece bom demais para o público C e D.
