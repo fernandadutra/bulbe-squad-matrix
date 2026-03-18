@@ -14,7 +14,7 @@ D02. Falta de transparência e objetividade com os dados de consumo e economia.
    Fala 1: "Nosso método de divulgação é meio pastelão" 
    Fala 2: "Nossa taxa de economia é de até 15%, devido ao frete"
    
-   Contexto: Não há simulação de economia e o APP só permite a entreda de cleintes que já pagam a conta.
+   Contexto: Não há simulação de economia e o APP só permite a entrada de clientes que já pagam a conta.
    
    Relação: Nova Demanda
    
@@ -22,7 +22,7 @@ D03. Dificuldade em acessar públicos A e B.
    Fala 1:"No início da empresa nós focamos muito no público C e D e agora temos dificuldades na captação do público A e B" 
    Fala 2:"Todas as nossas campanhas de publicidade são direcionadas ao público C e D"
    
-   Contexto: Não há meio de posicionamento que mostre vantegens para o público A e B.
+   Contexto: Não há meio de posicionamento que mostre vantagens para o público A e B.
    
    Relação: Nova Demanda
    
@@ -34,7 +34,7 @@ D04. Baixa usabilidade.
    
    Relação: Tem relação com a D06, o APP precisa funcionar bem no celular e ser fácil de acessar.
    
-D05. Contrução de confiança.
+D05. Construção de confiança.
    Fala 1:"Os Leads não confiam na Bulbe no primeiro contato" 
    Fala 2:"A confiança só aumenta quando é por indicação de amigos ou de empresa"
    
