@@ -26,7 +26,7 @@ D03. Dificuldade em acessar públicos A e B.
    
    Relação: Nova Demanda
    
-D04. Baixa usuabilidade.
+D04. Baixa usabilidade.
    Fala 1:"Criamos o APP para melhorar a rastreabilidade dos dados dos clientes" 
    Fala 2:"O APP é só para clientes cadastrados(já recebem a conta Bulbe)"
    
