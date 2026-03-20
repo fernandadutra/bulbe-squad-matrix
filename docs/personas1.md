@@ -15,3 +15,15 @@ COMPORTAMENTOS DIGITAIS:
 - Usa redes sociais? Quais? Sim, Instagram e Linkedin.
 
 FRASE-CHAVE: "Estatística, Economia, Redução, Oportunidade"
+
+
+US-01: User Story da Helena 
+Como Helena, eu gostaria de uma simulação para que eu analise se haverá um desconto real.
+Demanda relacionada: D05
+Estimativa de esforço: P
+Critérios de aceitação: 
+   1- Ser viável
+   2- Ser uma melhoria
+   3- Ser lucrativo
+Novas técnicas: Confiança do usuário em algo novo e desconhecido, simulação fácil de se implementar.
+   
