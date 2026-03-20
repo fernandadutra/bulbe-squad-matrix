@@ -207,7 +207,7 @@
 
 ---
 
-### US-01 · [Título]
+### US-01 · [José Aldo]
 
 > **Como** [Homem de 68 anos e Caseiro de uma Fazenda],  
 > **quero** [Ver o quanto economizou no mês],  
