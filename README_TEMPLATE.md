@@ -48,7 +48,7 @@
 
 | Item | Link |
 |---|---|
-| Repositório GitHub | [URL do repositório] |
+| Repositório GitHub | [https://github.com/fernandadutra/bulbe-squad-matrix] |
 | GitHub Project (Kanban) | [URL do board] |
 | Deploy / Demo | [URL do deploy, se disponível] |
 
