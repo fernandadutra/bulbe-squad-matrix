@@ -201,7 +201,7 @@
 
 | ID | Persona | Título | Prioridade | Status |
 |---|---|---|---|---|
-| US-01 | [Persona] | [Título curto] | Alta / Média / Baixa | To Do / In Progress / Done |
+| US-01 | [Joé Aldo] | [Persona D] | Alta / Média / Baixa | To Do / In Progress / Done |
 | US-02 | [Persona] | [Título curto] | | |
 | US-03 | [Persona] | [Título curto] | | |
 
@@ -209,17 +209,17 @@
 
 ### US-01 · [Título]
 
-> **Como** [Persona],  
-> **quero** [ação que o usuário deseja realizar],  
-> **para que** [benefício ou objetivo que o usuário alcança].
+> **Como** [Homem de 68 anos e Caseiro de uma Fazenda],  
+> **quero** [Ver o quanto economizou no mês],  
+> **para que** [Possa planejar as finanças do mês seguinte].
 
-**Demanda relacionada:** D-0X  
+**Demanda relacionada:** D-06  
 **Estimativa de esforço:** [P / M / G] *(Story Points ou T-shirt sizing)*
 
 **Critérios de Aceitação:**
-- [ ] [Critério 1: condição verificável e objetiva]
-- [ ] [Critério 2]
-- [ ] [Critério 3]
+- [Ser viável] [Critério ]
+- [Ser uma melhoria ] [Critério 2]
+- [Ser lucrativo ] [Critério 3]
 
 **Notas técnicas:**  
 [Observações relevantes para a implementação, limitações conhecidas ou dependências.]
