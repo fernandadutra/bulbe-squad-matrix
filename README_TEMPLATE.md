@@ -60,46 +60,95 @@
 
 ### Declaração de Rastreabilidade
 
-> Declaro que as demandas registradas neste documento foram levantadas pela Squad [Nome] durante a visita ao cliente em [data], com base em entrevistas diretas e observação. As evidências estão documentadas nas Issues do GitHub: [link para as Issues].
+> Declaro que as demandas registradas neste documento foram levantadas pela Squad [MATRIX] durante a visita ao cliente em [04/03/2026], com base em entrevistas diretas e observação. As evidências estão documentadas nas Issues do GitHub: [link para as Issues].
 
 ---
 
-### D-01 · [Título Curto da Demanda]
+### D-01 · [Inadimplência da Primeira Fatura]
 
 | Campo | Conteúdo |
 |---|---|
 | **ID** | D-01 |
-| **Título** | [Título descritivo] |
-| **Origem** | Entrevista com [cargo/nome do contato na Bulbe], [data] |
-| **Evidência** | *"[Trecho literal de fala do cliente que justifica esta demanda]"* |
+| **Título** | [Inadimplência da Primeira Fatura] |
+| **Origem** | Entrevista com [Fernando, gerente comercial na Bulbe], [04/03/2026] |
+| **Evidência** | *"Recebemos muitos relatos de clientes que não receberam a conta devido ao tempo de implementação que pode chergar a 4 meses"* |
 | **Prioridade MoSCoW** | Must / Should / Could / Won't |
-| **Impacto no Negócio** | [Descreva o impacto: churn, conversão, satisfação, etc.] |
+| **Impacto no Negócio** | Alto impacto no Churn e inadimplência da primeira fatura, devido ao alto tempo de implementação do serviço |
 
 **Descrição:**  
-[2–3 frases explicando a demanda com suas próprias palavras.]
-
+[O alto tempo de implementação do serviço(3 a 4 meses) faz com que o cliente esqueça que fez a assinatura do serviço e fique desconfiado com o recebimento da primeira fatura e não pague.]
+[A desconfiança gerada pelo tempo de implementação pode fazer com que o cliente cancele o serviço por ficar "a deriva" durante o tempo de implementação do serviço.]
 ---
 
-### D-02 · [Título Curto da Demanda]
+### D-02 · [Tranparência e Objetividade]
 
 | Campo | Conteúdo |
 |---|---|
 | **ID** | D-02 |
-| **Título** | [Título descritivo] |
-| **Origem** | [Fonte da demanda] |
-| **Evidência** | *"[Trecho ou dado que evidencia a demanda]"* |
+| **Título** | [Falta de Transparência com o cliente] |
+| **Origem** | Reunião com o  Fernando, gerente comercial da Bulbe |
+| **Evidência** | *"Nossa taxa de economia é de até 15%, devido ao frete"* |
 | **Prioridade MoSCoW** | Must / Should / Could / Won't |
-| **Impacto no Negócio** | [Impacto] |
+| **Impacto no Negócio** | [Impacto na satisfação do cliente após a primeira fatura e Churn] |
 
 **Descrição:**  
-[Descrição da demanda.]
+[Não há simulação de economia e o APP só permite a entrada de clientes que já pagam a conta.] 
+[O cliente só sabe o impacto do serviço da Bulbe após a primeira fatura]
 
 ---
 
-> 🔁 *Repita o bloco acima para cada demanda identificada (recomendado: 4 a 8 demandas).*
+### D-03 · [Dificuldade em acessar públicos A e B]
+
+| Campo | Conteúdo |
+|---|---|
+| **ID** | D-03 |
+| **Título** | [Dificuldade em acessar públicos A e B] |
+| **Origem** | Reunião com o  Fernando, gerente comercial da Bulbe |
+| **Evidência** | *"Todas as nossas campanhas de publicidade são direcionadas ao público C e D"* |
+| **Prioridade MoSCoW** | Must / Should / Could / Won't |
+| **Impacto no Negócio** | [Impacto na aquisição de novos clientes] |
+
+**Descrição:**  
+[O posicionamento e planejamento de marketing da Bulbe é totalmente direcionado aos públicos C e D, o que torna mais difícil acessas os públicos A e B.] 
+[Não há meio de posicionamento que mostre vantagens para o público A e B.]
+
 
 ---
 
+### D-04 · [Baixa Usuabilidade]
+
+| Campo | Conteúdo |
+|---|---|
+| **ID** | D-04 |
+| **Título** | [Baixa usabilidade] |
+| **Origem** | Reunião com o  Fernando, gerente comercial da Bulbe |
+| **Evidência** | *"O APP é só para clientes cadastrados(já recebem a conta Bulbe)"* |
+| **Prioridade MoSCoW** | Must / Should / Could / Won't |
+| **Impacto no Negócio** | [Impacto na adesão e retenção do APP pelos usuários] |
+
+**Descrição:**  
+[O APP está em desenvolvimento e estão sendo feitos remendos no site para cobrir o APP.] 
+[O APP não apresenta recursos para fazer com que os usuários façam a adesão e o uso do APP cotidianamente]
+
+---
+
+### D-05 · [Construção de confiança]
+
+| Campo | Conteúdo |
+|---|---|
+| **ID** | D-05 |
+| **Título** | [Construção de confiança] |
+| **Origem** | Reunião com o  Fernando, gerente comercial da Bulbe |
+| **Evidência** | *"Os Leads não confiam na Bulbe no primeiro contato"* |
+| **Prioridade MoSCoW** | Must / Should / Could / Won't |
+| **Impacto no Negócio** | [Impacto no Churn da após 1° fatura] |
+
+**Descrição:**  
+[O serviço oferecido pela Bulbe parece bom demais para o público C e D.] 
+[Os clientes não entendem muito bem o que é o serviço da Bulbe durante o processo de adesão]
+
+
+---
 ## 3. Personas
 
 > ⚠️ **Instrução para a Squad:** As personas devem ser construídas com base em dados reais coletados pela squad (entrevistas, questionários, observação). Referência metodológica: Cooper et al. (2014) — *About Face: The Essentials of Interaction Design*.
