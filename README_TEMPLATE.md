@@ -40,7 +40,7 @@
 | Nome Completo | Matrícula | Curso | Papel na Squad |
 |---|---|---|---|
 | [Nome] | [Matrícula] | [Eng. Software / Ciência de Dados / Eng. Computação] | [Ex: Tech Lead] |
-| [Nome] | [Matrícula] | [Curso] | [Papel] |
+| [Leandro Dias De Oliveira] | [202501589693] | [Engenharia de Software] | [Desenvolvedor] |
 | [Nome] | [Matrícula] | [Curso] | [Papel] |
 | [Nome] | [Matrícula] | [Curso] | [Papel] |
 
