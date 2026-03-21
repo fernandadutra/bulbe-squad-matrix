@@ -1,7 +1,7 @@
 # 🌞 [Nome do Projeto] — Bulbe Energia
 > **Disciplina:** Projeto Aplicado I — Ibmec 2026.1  
 > **Professor:** Cristiano de Macedo Neto, M.Sc.  
-> **Squad:** [Nome da Squad]  
+> **Squad:** [Matrix]  
 > **Cliente:** Bulbe Energia · [bulbeenergia.com.br](https://bulbeenergia.com.br)
 
 ---
@@ -41,8 +41,8 @@
 |---|---|---|---|
 | [Nome] | [Matrícula] | [Eng. Software / Ciência de Dados / Eng. Computação] | [Ex: Tech Lead] |
 | [Leandro Dias De Oliveira] | [202501589693] | [Engenharia de Software] | [Desenvolvedor] |
-| [Nome] | [Matrícula] | [Curso] | [Papel] |
-| [Nome] | [Matrícula] | [Curso] | [Papel] |
+| [Fernanda Vaccillotto Pimenta Dutra] | [202501398881] | [Ciência de Dados] | [Desenvolvedor] |
+| [Mariana Resende Maia] | [202502021348] | [Ciência de Dados] | [Scrum Master] |
 
 ### 1.5 Repositório e Entrega
 
@@ -187,7 +187,66 @@
 
 ---
 
-### Persona 2 — [Nome Fictício]
+### Persona 2 — [Helena]
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│  👤  [Helena], [35] anos                                   │
+│      [Coordenadora T&D] · [Belo Horizonte]                        │
+└─────────────────────────────────────────────────────────────┘
+```
+
+| Atributo | Descrição |
+|---|---|
+| **Perfil** | [1 frase sobre quem é essa pessoa] |
+| **Escolaridade** | [Ensino Superior Completo] |
+| **Familiaridade com tecnologia** | [Média] |
+| **Dispositivo principal** | [Mobile] |
+
+**Objetivos:**
+- [Objetivo 1: Redução de gastos através do desconto oferecidos pela parceria da empresa.]
+
+**Frustrações:**
+- [Frustração 1: Conta de luz alta.]
+- [Frustração 2: Análise de taxas/descontos.]
+- [Frustração 3: O alto custo de luz e as pequenas taxas.]
+
+**Citação representativa:**
+> *"[Estatística, Economia, Redução, Oportunidade]"*
+
+**Relevância para o Projeto:**  
+[É uma persona importante pois é classe B, uma das classes que é o alvo atualmente para a assinatura da Bulbe.]
+
+### Persona 3 — [Paulo]
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│  👤  [Paulo], [25] anos                                   │
+│      [Telemarketing] · [Uberlândia]                        │
+└─────────────────────────────────────────────────────────────┘
+```
+
+| Atributo | Descrição |
+|---|---|
+| **Perfil** | [1 frase sobre quem é essa pessoa] |
+| **Escolaridade** | [Ensino Médio Completo] |
+| **Familiaridade com tecnologia** | [Média/Baixa] |
+| **Dispositivo principal** | [Mobile] |
+
+**Objetivos:**
+- [Objetivo 1: Redução de gastos.]
+
+**Frustrações:**
+- [Frustração 1: Sobrar mais dinheiro.]
+- [Frustração 2: Falta de confiança.]
+- [Frustração 3: Pequenas taxas.]
+
+**Citação representativa:**
+> *"[Menos é mais, Economia, Redução, Tomar umas]"*
+
+**Relevância para o Projeto:**  
+[É uma persona relevante mas não tanto importante, é um usuário típico.]
+
 
 > 🔁 *Repita a estrutura acima. Recomendado: 2 a 3 personas.*
 
@@ -202,8 +261,8 @@
 | ID | Persona | Título | Prioridade | Status |
 |---|---|---|---|---|
 | US-01 | [Joé Aldo] | [Persona D] | Alta / Média / Baixa | To Do / In Progress / Done |
-| US-02 | [Persona] | [Título curto] | | |
-| US-03 | [Persona] | [Título curto] | | |
+| US-02 | [Helena] | [Persona classe B] | Alta | Done |
+| US-03 | [Paulo] | [Persona classe D] | Baixa/Média | Done |
 
 ---
 
@@ -226,18 +285,42 @@
 
 ---
 
-### US-02 · [Título]
+### US-02 · [Helena]
 
-> **Como** [Persona],  
-> **quero** [ação],  
-> **para que** [benefício].
+> **Como** [Helena],  
+> **quero** [eu gostaria de uma simulação],  
+> **para que** [para que eu analise se haverá um desconto real.].
 
-**Demanda relacionada:** D-0X  
-**Estimativa de esforço:** [P / M / G]
+**Demanda relacionada:** D-05 
+**Estimativa de esforço:** [P]
 
 **Critérios de Aceitação:**
-- [ ] [Critério 1]
-- [ ] [Critério 2]
+- [Ser viável] [Critério 1]
+- [Ser uma melhoria] [Critério 2]
+- [Ser lucrativo] [Critério 3]
+
+**Notas técnicas:**  
+[Confiança do usuário em algo novo e desconhecido, simulação fácil de se implementar.]
+
+---
+
+### US-03 · [Paulo]
+
+> **Como** [Paulo],  
+> **quero** [eu gostaria de fácil acesso a fatura],  
+> **para que** [para que eu tenha fácil visibilidade do desconto].
+
+**Demanda relacionada:** D-02 
+**Estimativa de esforço:** [M]
+
+**Critérios de Aceitação:**
+- [Ser viável] [Critério 1]
+- [Ser uma melhoria] [Critério 2]
+- [Ser lucrativo] [Critério 3]
+
+**Notas técnicas:**  
+[Criação de uma simulação/tabela para visualização/comparação de descontos.]
+
 
 ---
 
