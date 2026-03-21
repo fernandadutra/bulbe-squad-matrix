@@ -1,4 +1,4 @@
-# 🌞 [Nome do Projeto] — Bulbe Energia
+# 🌞 [Matrix] — Bulbe Energia
 > **Disciplina:** Projeto Aplicado I — Ibmec 2026.1  
 > **Professor:** Cristiano de Macedo Neto, M.Sc.  
 > **Squad:** [Matrix]  
@@ -198,7 +198,7 @@
 
 | Atributo | Descrição |
 |---|---|
-| **Perfil** | [1 frase sobre quem é essa pessoa] |
+| **Perfil** | [Coordenadora analítica que preza pela gestão baseada em dados e busca clareza nos processos para garantir que cada melhoria financeira seja estratégica, comprovada e otimize seus custos fixos.] |
 | **Escolaridade** | [Ensino Superior Completo] |
 | **Familiaridade com tecnologia** | [Média] |
 | **Dispositivo principal** | [Mobile] |
@@ -228,7 +228,7 @@
 
 | Atributo | Descrição |
 |---|---|
-| **Perfil** | [1 frase sobre quem é essa pessoa] |
+| **Perfil** | [Perfil curioso, porém com pouco tempo disponível, que busca soluções digitais simples e diretas para eliminar taxas e otimizar sua rotina financeira sem burocracia.] |
 | **Escolaridade** | [Ensino Médio Completo] |
 | **Familiaridade com tecnologia** | [Média/Baixa] |
 | **Dispositivo principal** | [Mobile] |
