@@ -321,8 +321,25 @@
 **Notas técnicas:**  
 [Criação de uma simulação/tabela para visualização/comparação de descontos.]
 
-
 ---
+
+### US-04 · [Alexandre]
+
+> **Como** [Alexandre, dono de supermercado de rede],  
+> **quero** [Acessar facilmente informações claras sobre a economia e geração de energia],  
+> **para que** [Para me sentir seguro em relação ao processo e tomar decisões mais assertivas para minha empresa].
+
+**Demanda relacionada:** D-03 
+**Estimativa de esforço:** [P]
+
+**Critérios de Aceitação:**
+- [Ser viável] [Critério 1]
+- [Ser uma melhoria] [Critério 2]
+- [Ser lucrativo] [Critério 3]
+
+**Notas técnicas:**  
+[Criação de uma aba/página com informações claras sobre o funcionamento da Bulbe + Respostas de dúvidas frequentes.]
+
 
 > 🔁 *Repita o bloco para cada User Story. Recomendado: mínimo de 6 histórias.*
 
