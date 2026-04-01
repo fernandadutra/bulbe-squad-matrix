@@ -1,0 +1,29 @@
+PERSONA: Helena 
+Idade: 35 | Profissão: Coordenadora de T&D | Cidade: Belo Horizonte
+Renda estimada: R$20.000,00 | Dispositivo preferido: Mobile
+
+OBJETIVOS:
+- O que ela quer alcançar com a Bulbe? Redução de gastos através do desconto oferecidos pela parceria da empresa.
+- Qual dor ela quer eliminar? Conta de luz alta.
+
+FRUSTRAÇÕES:
+- O que a impede hoje? Análise de taxas/descontos.
+- O que a frustra no mercado atual? O alto custo de luz e as pequenas taxas.
+
+COMPORTAMENTOS DIGITAIS:
+- Como ela pesquisa produtos/serviços? link oferecido pela empresa.
+- Usa redes sociais? Quais? Sim, Instagram e Linkedin.
+
+FRASE-CHAVE: "Estatística, Economia, Redução, Oportunidade"
+
+
+US-01: User Story da Helena 
+Como Helena, eu gostaria de uma simulação para que eu analise se haverá um desconto real.
+Demanda relacionada: D05
+Estimativa de esforço: P
+Critérios de aceitação: 
+   1- Ser viável
+   2- Ser uma melhoria
+   3- Ser lucrativo
+Novas técnicas: Confiança do usuário em algo novo e desconhecido, simulação fácil de se implementar.
+   
