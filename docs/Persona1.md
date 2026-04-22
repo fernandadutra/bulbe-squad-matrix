@@ -17,13 +17,18 @@ COMPORTAMENTOS DIGITAIS:
 FRASE-CHAVE: "Estatística, Economia, Redução, Oportunidade"
 
 
-US-01: User Story da Helena 
-Como Helena, eu gostaria de uma simulação para que eu analise se haverá um desconto real.
+ID: US-01
+Título: Simulador de Economia e Descontos
+Persona: Helena (Moradora/Usuária)
 Demanda relacionada: D05
 Estimativa de esforço: P
+Como Helena, quero um simulador interativo onde eu possa inserir meus dados atuais de consumo,
+para que eu visualize o desconto real que terei com o novo serviço e me sinta segura para aderir.
 Critérios de aceitação: 
-   1- Ser viável
-   2- Ser uma melhoria
-   3- Ser lucrativo
+   1.Entrada de Dados: O sistema deve permitir que a usuária insira o valor da sua última conta de luz/serviço através de um campo numérico.
+
+   2.Cálculo Automático: Ao clicar em "Simular", o sistema deve aplicar a regra de desconto (ex: 15%) sobre o valor inserido e exibir o novo valor total.
+
+   3.Comparativo Visual: Deve exibir lado a lado o valor atual (Sem Desconto) e o novo valor (Com Desconto), destacando a economia mensal em reais.
 Novas técnicas: Confiança do usuário em algo novo e desconhecido, simulação fácil de se implementar.
    
