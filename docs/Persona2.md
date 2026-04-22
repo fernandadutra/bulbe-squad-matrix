@@ -16,12 +16,18 @@ Como ele pesquisa produtos/serviços? Através do TikTok.
 Usa redes sociais? Quais? Sim, Instagram e TikTok.
 FRASE-CHAVE: "Menos é mais, Economia, Redução, Tomar umas"
 
-US-01: User Story do Paulo
-Como Paulo, eu gostaria de fácil acesso a fatura, visibilidade do desconto.
+ID: US-02
+Título: Visualização Transparente de Fatura e Economia
+Persona: Paulo (O "Econômico Digital")
+Como Paulo, quero acessar minha fatura digital de forma simples e visualizar claramente o valor economizado no mês,
+para que eu tenha confiança no serviço e saiba exatamente quanto sobrou para meu lazer.
 Demanda relacionada: D02
-Estimativa de esforço: M 
+Prioridade MoSCoW: Must Have 
+Estimativa de esforço: M (Envolve lógica de cálculo e design de interface mobile).
 Critérios de aceitação: 
-   1- Ser viável
-   2- Ser uma melhoria
-   3- Ser lucrativo
+   1. Acesso Simplificado: O link para a fatura deve estar visível na primeira tela (Home) após o login, acessível com apenas um clique/toque.
+
+   2. Destaque da Economia: O valor economizado (ex: "Você economizou R$ 45,00 este mês") deve estar em destaque (fonte maior ou cor diferente) logo acima do valor total a pagar.
+
+   3. Tabela Comparativa (Nova Técnica): Deve exibir uma tabela simples comparando: [Valor sem Bulbe] vs [Valor com Bulbe] = [Economia Total].
 Novas técnicas: Criação de uma simulação/tabela para visualização/comparação de descontos.
