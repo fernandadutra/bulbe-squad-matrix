@@ -21,6 +21,7 @@ ID: US-01
 Título: Simulador de Economia e Descontos
 Persona: Helena (Moradora/Usuária)
 Demanda relacionada: D05
+Prioridade MoSCoW: Must Have
 Estimativa de esforço: P
 Como Helena, quero um simulador interativo onde eu possa inserir meus dados atuais de consumo,
 para que eu visualize o desconto real que terei com o novo serviço e me sinta segura para aderir.
