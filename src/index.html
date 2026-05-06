@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bulbe — Simular desconto</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="screen">
+    <header class="topbar">
+      <button class="icon-btn topbar__menu" aria-label="Abrir menu">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <a href="index.html" class="topbar__logo" aria-label="Bulbe">
+        <img src="../public/logo.png" alt="Bulbe Logo" style="height: 32px;" />
+      </a>
+    </header>
+
+    <a class="referral" href="#" aria-label="Indique e ganhe R$50 mais prêmios especiais">
+      <img src="../public/banner.png" alt="Banner Indique e Ganhe" style="width: 100%; height: auto; display: block;" />
+    </a>
+
+    <main class="sheet">
+      <div class="sheet__head">
+        <h1 class="title">
+          Veja quanto você<br />
+          pode <span class="title--accent">economizar</span><br />
+          na sua conta de luz
+        </h1>
+        <button class="icon-btn title__help" aria-label="Como funciona a simulação">
+          <img src="../public/tooltip.png" alt="Como funciona a simulação" style="width: 26px; height: 26px; object-fit: contain;" />
+        </button>
+      </div>
+
+      <p class="lead">Insira o valor da sua última fatura e simule o desconto com a Bulbe.</p>
+
+      <form id="simulador" class="card" novalidate>
+        <label class="card__label" for="fatura">Valor da sua fatura atual</label>
+
+        <div class="field">
+          <span class="field__currency">R$</span>
+          <input
+            id="fatura"
+            name="fatura"
+            class="field__input"
+            type="text"
+            inputmode="decimal"
+            autocomplete="off"
+            value="0,00"
+            aria-describedby="discountHint"
+          />
+        </div>
+
+        <p id="discountHint" class="discount-pill">
+          Desconto Bulbe: <b>até 15%</b> na sua fatura
+        </p>
+      </form>
+
+      <button form="simulador" type="submit" class="btn btn--primary">
+        Simular <span aria-hidden="true">→</span>
+      </button>
+    </main>
+
+    <nav class="tabbar" aria-label="Navegação principal">
+      <a href="#" class="tab">
+        <svg class="tab__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M7 3h8l4 4v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+          <path d="M14 3v4h4" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+          <path d="M9 12h7M9 16h7" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+        </svg>
+        <span>Faturas</span>
+      </a>
+      <a href="#" class="tab is-active" aria-current="page">
+        <svg class="tab__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M13.5 2L5 13h6l-1.5 9L19 11h-6l.5-9z"/>
+        </svg>
+        <span>Consumo</span>
+      </a>
+      <a href="#" class="tab">
+        <svg class="tab__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <circle cx="9" cy="8" r="3.2" stroke="currentColor" stroke-width="1.7"/>
+          <path d="M3.5 19c.7-3 3-4.5 5.5-4.5s4.8 1.5 5.5 4.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+          <circle cx="17.5" cy="9" r="2.6" stroke="currentColor" stroke-width="1.7"/>
+          <path d="M17.5 14c2.2 0 3.8 1.2 4.5 3M19 5v3M17.5 6.5h3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+        </svg>
+        <span>Indicações</span>
+      </a>
+    </nav>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
