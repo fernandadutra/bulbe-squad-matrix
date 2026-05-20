@@ -39,7 +39,7 @@
         setTimeout(() => (input.style.outline = ''), 1200);
         return;
       }
-      try { sessionStorage.setItem(STORAGE_KEY, String(value)); } catch (_) {}
+      try { sessionStorage.setItem(STORAGE_KEY, String(value)); } catch (_) { }
       window.location.href = 'resultado.html';
     });
   }
@@ -49,10 +49,10 @@
     if (!targets.length) return;
 
     let value = 0;
-    try { value = parseFloat(sessionStorage.getItem(STORAGE_KEY)) || 0; } catch (_) {}
+    try { value = parseFloat(sessionStorage.getItem(STORAGE_KEY)) || 0; } catch (_) { }
 
     if (!value) {
-      // demo defaults match the design
+      // valores padrão de demonstração de acordo com o design
       value = 350;
     }
 
@@ -75,7 +75,6 @@
     const cta = document.getElementById('ctaStart');
     if (cta) {
       cta.addEventListener('click', () => {
-        // hook up your real CTA destination here
         alert('Vamos te direcionar para iniciar sua adesão à Bulbe.');
       });
     }

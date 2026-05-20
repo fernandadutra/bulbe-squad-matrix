@@ -14,30 +14,21 @@
 
 <body>
   <div class="screen">
-    <header class="topbar">
-      <button class="icon-btn topbar__menu" aria-label="Abrir menu">
-        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" />
-        </svg>
-      </button>
-      <a href="index.html" class="topbar__logo" aria-label="Bulbe">
-        <img src="../public/logo.png" alt="Bulbe Logo" style="height: 32px;" />
-      </a>
-    </header>
+    <bulbe-header-desktop active-tab="consumo"></bulbe-header-desktop>
+    <bulbe-header></bulbe-header>
 
-    <a class="referral" href="#" aria-label="Indique e ganhe R$50 mais prêmios especiais">
-      <img src="../public/banner.png" alt="Banner Indique e Ganhe" style="width: 100%; height: auto; display: block;" />
-    </a>
+    <bulbe-banner></bulbe-banner>
 
-    <main class="sheet sheet--result">
+    <bulbe-sheet tipo="resultado">
       <h1 class="title title--compact">
         Sua <span class="title--accent">simulação</span>
       </h1>
 
-      <section class="metric metric--monthly" aria-label="Economia mensal">
-        <p class="metric__label">Você vai economizar por mês</p>
-        <p class="metric__value">R$ <span data-result="monthlySavings">52,50</span></p>
-      </section>
+      <bulbe-metric-card
+        label="Você vai economizar por mês"
+        value="52,50"
+        data-result="monthlySavings"
+      ></bulbe-metric-card>
 
       <h2 class="section-title">Comparativo mensal</h2>
 
@@ -64,10 +55,11 @@
         </article>
       </div>
 
-      <section class="metric metric--annual" aria-label="Economia anual">
-        <p class="metric__label">Sua economia anual estimada</p>
-        <p class="metric__value">R$ <span data-result="annualSavings">630,00</span></p>
-      </section>
+      <bulbe-metric-card
+        label="Sua economia anual estimada"
+        value="630,00"
+        data-result="annualSavings"
+      ></bulbe-metric-card>
       <div class="footer-result__container">
         <button type="button" class="btn btn--success" id="ctaStart">
           Comece agora <span aria-hidden="true">→</span>
@@ -76,38 +68,12 @@
           <span aria-hidden="true" class="txt--ghost">←</span> Simular novamente
         </a>
       </div>
-    </main>
+    </bulbe-sheet>
 
-    <nav class="tabbar" aria-label="Navegação principal">
-      <a href="#" class="tab">
-        <svg class="tab__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <path d="M7 3h8l4 4v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z" stroke="currentColor"
-            stroke-width="1.7" stroke-linejoin="round" />
-          <path d="M14 3v4h4" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" />
-          <path d="M9 12h7M9 16h7" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" />
-        </svg>
-        <span>Faturas</span>
-      </a>
-      <a href="index.html" class="tab is-active" aria-current="page">
-        <svg class="tab__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-          <path d="M13.5 2L5 13h6l-1.5 9L19 11h-6l.5-9z" />
-        </svg>
-        <span>Consumo</span>
-      </a>
-      <a href="#" class="tab">
-        <svg class="tab__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <circle cx="9" cy="8" r="3.2" stroke="currentColor" stroke-width="1.7" />
-          <path d="M3.5 19c.7-3 3-4.5 5.5-4.5s4.8 1.5 5.5 4.5" stroke="currentColor" stroke-width="1.7"
-            stroke-linecap="round" />
-          <circle cx="17.5" cy="9" r="2.6" stroke="currentColor" stroke-width="1.7" />
-          <path d="M17.5 14c2.2 0 3.8 1.2 4.5 3M19 5v3M17.5 6.5h3" stroke="currentColor" stroke-width="1.7"
-            stroke-linecap="round" />
-        </svg>
-        <span>Indicações</span>
-      </a>
-    </nav>
+    <bulbe-footer active-tab="consumo"></bulbe-footer>
   </div>
 
+  <script src="components.js"></script>
   <script src="script.js"></script>
 </body>
 
