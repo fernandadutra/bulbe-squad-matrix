@@ -10,6 +10,7 @@
   --bulbe-azul-suave: #1B25A8;
   --bulbe-verde: #1FCD68;
   --bulbe-verde-forte: #16A356;
+  --bulbe-amarelo: #FFD400;
   --bulbe-verde-fundo: #E6F9ED;
   --bulbe-verde-profundo: #075E54;
   
@@ -486,6 +487,161 @@ bulbe-metric-card {
   height: 2px;
   background: var(--bulbe-azul);
   border-radius: 2px;
+}
+
+/* ==========================================================================
+   TELA STATUS DO PEDIDO
+   ========================================================================== */
+
+.status-titulo {
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--bulbe-texto);
+  margin: 0 0 12px;
+  line-height: 1.2;
+}
+
+.status-descricao {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--bulbe-texto);
+  margin: 0 0 28px;
+}
+
+/* ---------- Progress Tracker ---------- */
+.progress-tracker {
+  margin-bottom: 24px;
+}
+
+.progress-tracker__steps {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+/* Linha conectora passando pelo centro dos ícones */
+.progress-tracker__steps::before {
+  content: '';
+  position: absolute;
+  top: 34px;
+  left: 12.5%;
+  right: 12.5%;
+  height: 1.5px;
+  background-image: repeating-linear-gradient(to right, var(--bulbe-amarelo) 0, var(--bulbe-amarelo) 8px, transparent 8px, transparent 18px);
+  z-index: 0;
+}
+
+.progress-tracker__step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  flex: 1;
+  position: relative;
+  z-index: 1;
+}
+
+.progress-tracker__icone {
+  width: 68px;
+  height: 68px;
+  object-fit: contain;
+  display: block;
+  background: #fff;
+}
+
+.progress-tracker__badge {
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  background: transparent;
+  border: 1.5px dashed var(--bulbe-azul);
+  color: var(--bulbe-azul);
+  font-size: 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.progress-tracker__step.is-active .progress-tracker__badge {
+  background: var(--bulbe-verde-forte);
+  border: none;
+  color: #fff;
+}
+
+.progress-tracker__label {
+  font-size: 10px;
+  font-weight: 700;
+  text-align: center;
+  color: var(--bulbe-azul);
+  line-height: 1.35;
+}
+
+.progress-tracker__step.is-active .progress-tracker__label {
+  color: var(--bulbe-verde-forte);
+}
+
+/* ---------- Card de Status Atual ---------- */
+.status-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 14px 16px;
+  margin-bottom: 20px;
+}
+
+.status-card__header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.status-card__icone {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.status-card__label {
+  font-size: 15px;
+  font-weight: 700;
+  color: #18814D;
+  margin: 0;
+}
+
+.status-card__titulo {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--bulbe-texto);
+  margin: 0 0 6px;
+  line-height: 1.3;
+}
+
+.status-card__descricao {
+  font-size: 13px;
+  font-weight: 600;
+  color: #626266;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* ---------- Sino de Notificação no Header ---------- */
+.topbar__notificacao {
+  position: relative;
+}
+
+.topbar__notificacao-badge {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #E90808;
+  border: 1.5px solid var(--bulbe-azul);
 }
 
 /* Telas Pequenas */
