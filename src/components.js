@@ -48,6 +48,9 @@ class BulbeSheet extends HTMLElement {
     if (tipo === 'beneficios') {
       this.classList.add('sheet--beneficios');
     }
+    if (tipo === 'pre-fatura') {
+      this.classList.add('sheet--pre-fatura');
+    }
   }
 }
 customElements.define('bulbe-sheet', BulbeSheet);
@@ -58,7 +61,7 @@ class BulbeFooter extends HTMLElement {
     const activeTab = this.getAttribute('active-tab') || 'consumo';
     this.innerHTML = `
       <nav class="tabbar" aria-label="Navegação principal">
-        <a href="#" class="tab ${activeTab === 'faturas' ? 'is-active' : ''}" ${activeTab === 'faturas' ? 'aria-current="page"' : ''}>
+        <a href="pre-fatura.html" class="tab ${activeTab === 'faturas' ? 'is-active' : ''}" ${activeTab === 'faturas' ? 'aria-current="page"' : ''}>
           <svg class="tab__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <path d="M7 3h8l4 4v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
             <path d="M14 3v4h4" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
@@ -98,7 +101,7 @@ class BulbeHeaderDesktop extends HTMLElement {
             <img src="../public/logo.png" alt="Bulbe Logo" style="height: 32px;" />
           </a>
           <nav class="topbar-desktop__nav" aria-label="Navegação desktop">
-            <a href="#" class="topbar-desktop__link ${activeTab === 'faturas' ? 'is-active' : ''}" ${activeTab === 'faturas' ? 'aria-current="page"' : ''}>
+            <a href="pre-fatura.html" class="topbar-desktop__link ${activeTab === 'faturas' ? 'is-active' : ''}" ${activeTab === 'faturas' ? 'aria-current="page"' : ''}>
               Faturas
             </a>
             <a href="simular-desconto.html" class="topbar-desktop__link ${activeTab === 'consumo' ? 'is-active' : ''}" ${activeTab === 'consumo' ? 'aria-current="page"' : ''}>
