@@ -170,7 +170,7 @@ let blurOverlay = null;
 let modalImage = null;
 
 // URL da imagem que será exibida
-const imageUrl = 'public/Camada Bulbinho.png';
+const imageUrl = '../public/Camada Bulbinho.png';
 
 // Clique no ícone = ATIVA blur + mostra imagem
 tooltipImg.addEventListener('click', function(event) {
