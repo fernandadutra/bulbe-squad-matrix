@@ -572,6 +572,9 @@ bulbe-metric-card {
   gap: 10px;
   text-decoration: none;
   border: 0;
+}
+
+/* ==========================================================================
    TELA STATUS DO PEDIDO
    ========================================================================== */
 
@@ -769,6 +772,151 @@ bulbe-metric-card {
   font-size: 16px;
   padding: 11px 22px;
   height: 44px;
+}
+
+/* ---------- TELA BENEFÍCIOS ---------- */
+.sheet--beneficios {
+  padding-top: 22px;
+  gap: 20px;
+}
+
+.beneficios__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.beneficios__titulo {
+  margin: 0;
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--bulbe-azul);
+  line-height: 1.35;
+}
+
+.beneficios__verde {
+  color: var(--bulbe-verde);
+}
+
+.beneficios__info-btn {
+  background: transparent;
+  border: 0;
+  padding: 2px;
+  cursor: pointer;
+  flex-shrink: 0;
+  margin-top: 4px;
+  line-height: 0;
+}
+
+.beneficios__subtitulo {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 600;
+  color: #626266;
+  line-height: 1.5;
+}
+
+.beneficios__cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
+}
+
+.beneficio-card {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px;
+  border-radius: 10px;
+  min-height: 70px;
+}
+
+.beneficio-card--connect  { background: #edfdf4; border: 1px solid #b9f8cf; }
+.beneficio-card--movement { background: linear-gradient(to right, #eff6ff, #eef2ff); border: 1px solid #bedbff; }
+.beneficio-card--experience { background: #fff4e6; border: 1px solid rgba(255, 158, 27, 0.26); }
+
+.beneficio-card__icone-wrap {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.beneficio-card__icone-wrap--verde  { background: #26d07c; }
+.beneficio-card__icone-wrap--laranja { background: #ff9e1b; }
+
+.beneficio-card__icone {
+  width: 20px;
+  height: 16px;
+  object-fit: contain;
+}
+
+.beneficio-card__icone--full {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.beneficio-card__corpo {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.beneficio-card__linha-topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 20px;
+}
+
+.beneficio-card__nome {
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.6;
+}
+
+.beneficio-card__nome--verde   { color: #18814d; }
+.beneficio-card__nome--azul    { color: #0762c7; }
+.beneficio-card__nome--laranja { color: #ff9e1b; }
+
+.beneficio-card__cadeado {
+  width: 11px;
+  height: 13px;
+  object-fit: contain;
+}
+
+.beneficio-card__desc {
+  margin: 0;
+  font-size: 7px;
+  color: #a4b3c1;
+  line-height: 1.4;
+}
+
+.beneficio-card__parceiros {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: flex-end;
+}
+
+.beneficio-card__parceiro {
+  height: 11px;
+  width: 44px;
+  object-fit: contain;
+}
+
+.beneficio-card__parceiro--grande {
+  height: 22px;
+  width: 60px;
 }
 
 /* Telas Pequenas */
@@ -1015,6 +1163,8 @@ bulbe-metric-card {
     margin: 32px auto 0;
     border-radius: 14px;
     box-shadow: 0 6px 14px rgba(10, 16, 128, 0.18);
+  }
+
   .sheet--consumo {
     padding: 48px 0;
   }
