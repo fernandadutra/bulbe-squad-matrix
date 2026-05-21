@@ -163,3 +163,36 @@ class BulbeFaturaCard extends HTMLElement {
   }
 }
 customElements.define('bulbe-fatura-card', BulbeFaturaCard);
+const tooltipImg = document.querySelector('img[src="../public/tooltip.png"]');
+let blurOverlay = null;
+
+tooltipImg.addEventListener('click', function(event) {
+  event.stopPropagation(); // Previne clique imediato no overlay
+  
+  if (!blurOverlay) {
+    // Cria o overlay de blur
+    blurOverlay = document.createElement('div');
+    blurOverlay.className = 'blur-overlay';
+    document.body.appendChild(blurOverlay);
+
+    // Fecha o blur ao clicar no overlay
+    blurOverlay.addEventListener('click', removeBlur);
+
+    // Fecha ao pressionar ESC
+    document.addEventListener('keydown', handleEsc);
+  }
+});
+
+function removeBlur() {
+  if (blurOverlay) {
+    blurOverlay.remove();
+    blurOverlay = null;
+    document.removeEventListener('keydown', handleEsc);
+  }
+}
+
+function handleEsc(event) {
+  if (event.key === 'Escape') {
+    removeBlur();
+  }
+}
