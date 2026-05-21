@@ -919,6 +919,54 @@ bulbe-metric-card {
   width: 60px;
 }
 
+/* ---------- TELA PRÉ-FATURA ---------- */
+.sheet--pre-fatura {
+  padding-top: 32px;
+  gap: 16px;
+  align-items: center;
+}
+
+.pre-fatura__ilustracao {
+  width: 190px;
+  height: 190px;
+  object-fit: contain;
+  display: block;
+  flex-shrink: 0;
+}
+
+.pre-fatura__titulo {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: #08068d;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.pre-fatura__descricao {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 600;
+  color: #626266;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.pre-fatura__acoes {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.pre-fatura__divisor {
+  width: 90px;
+  height: 0;
+  border-top: 1px solid #8e8e93;
+  margin: 0 auto;
+}
+
 /* Telas Pequenas */
 @media (max-width: 360px) {
   .title {
@@ -1182,5 +1230,30 @@ bulbe-metric-card {
   .pre-grafico__btn {
     width: auto;
     min-width: 240px;
+  }
+
+  /* Pré-fatura desktop */
+  .sheet--pre-fatura {
+    max-width: 540px;
+    align-items: center;
+  }
+
+  .pre-fatura__ilustracao {
+    width: 240px;
+    height: 240px;
+  }
+
+  .pre-fatura__titulo {
+    font-size: 20px;
+  }
+
+  .pre-fatura__acoes {
+    max-width: 360px;
+    width: 100%;
+  }
+
+  .pre-fatura__acoes .btn--primary {
+    max-width: none;
+    margin-left: 0;
   }
 }
