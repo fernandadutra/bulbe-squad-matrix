@@ -644,6 +644,51 @@ bulbe-metric-card {
   border: 1.5px solid var(--bulbe-azul);
 }
 
+/* ---------- TELA PRÉ-GRÁFICO (Consumo) ---------- */
+.sheet--consumo {
+  padding: 20px 0 100px; /* sem padding lateral — movido para .pre-grafico__corpo */
+}
+
+.pre-grafico__ilustracao {
+  width: 100%;
+  height: auto;
+  display: block;
+  flex-shrink: 0;
+}
+
+.pre-grafico__corpo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 24px 22px 0;
+  flex: 1;
+}
+
+.pre-grafico__titulo {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--bulbe-azul);
+  line-height: 1.4;
+}
+
+.pre-grafico__descricao {
+  margin: 0;
+  font-size: 13px;
+  color: #626266;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+.pre-grafico__btn {
+  margin-top: 24px;
+  border-radius: 10px;
+  border-color: #a4b3c1;
+  font-size: 16px;
+  padding: 11px 22px;
+  height: 44px;
+}
+
 /* Telas Pequenas */
 @media (max-width: 360px) {
   .title {
@@ -875,5 +920,24 @@ bulbe-metric-card {
     width: auto;
     min-width: 220px;
     margin: 0;
+  }
+
+  .sheet--consumo {
+    padding: 48px 0;
+  }
+
+  .pre-grafico__ilustracao {
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  .pre-grafico__corpo {
+    padding-left: 56px;
+    padding-right: 56px;
+  }
+
+  .pre-grafico__btn {
+    width: auto;
+    min-width: 240px;
   }
 }
