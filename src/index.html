@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bulbe — Simular desconto</title>
+  <title>Bulbe — Como funciona</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
@@ -20,32 +20,43 @@
     <bulbe-banner></bulbe-banner>
 
     <bulbe-sheet>
-      <div class="sheet__head">
-        <h1 class="title">
-          Veja quanto você<br />
-          pode <span class="title--accent">economizar</span><br />
-          na sua conta de luz
-        </h1>
-        <button class="icon-btn title__help" aria-label="Como funciona a simulação">
-          <img src="../public/tooltip.png" alt="Como funciona a simulação"
-            style="width: 26px; height: 26px; object-fit: contain;" />
-        </button>
+      <h1 class="titulo-como-funciona">Como funciona</h1>
+
+      <div class="passos">
+        <img
+          src="../public/como-funciona-1.png"
+          alt="Passo 01: Energia solar que gera economia — nossas fazendas solares produzem energia limpa e renovável."
+          class="passo__imagem"
+        />
+
+        <div class="seta-separador" aria-hidden="true">
+          <img src="../public/seta-baixo.png" alt="" class="seta-separador__icone" />
+        </div>
+
+        <img
+          src="../public/como-funciona-2.png"
+          alt="Passo 02: Energia que chega até você — essa energia solar é enviada para a rede de distribuição da CEMIG."
+          class="passo__imagem"
+        />
+
+        <div class="seta-separador" aria-hidden="true">
+          <img src="../public/seta-baixo.png" alt="" class="seta-separador__icone" />
+        </div>
+
+        <img
+          src="../public/como-funciona-3.png"
+          alt="Passo 03: Créditos que viram desconto na sua conta de luz — chega em forma de créditos de energia que se transformam em desconto."
+          class="passo__imagem"
+        />
       </div>
-
-      <p class="lead">Insira o valor da sua última fatura e simule o desconto com a Bulbe.</p>
-
-      <bulbe-fatura-card></bulbe-fatura-card>
-
-      <button form="simulador" type="submit" class="btn btn--primary">
-        Simular <span aria-hidden="true">→</span>
-      </button>
     </bulbe-sheet>
 
-    <bulbe-footer active-tab="consumo"></bulbe-footer>
+    <a href="simular-desconto.html" class="btn-quero-economizar">
+      Quero economizar <span aria-hidden="true">→</span>
+    </a>
   </div>
 
   <script src="components.js"></script>
-  <script src="script.js"></script>
 </body>
 
 </html>

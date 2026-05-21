@@ -13,7 +13,7 @@ class BulbeHeader extends HTMLElement {
             <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
           </svg>
         </button>
-        <a href="index.html" class="topbar__logo" aria-label="Bulbe">
+        <a href="index.html" class="topbar__logo" aria-label="Bulbe — Início">
           <img src="../public/logo.png" alt="Bulbe Logo" style="height: 32px;" />
         </a>
       </header>
@@ -63,7 +63,7 @@ class BulbeFooter extends HTMLElement {
           </svg>
           <span>Faturas</span>
         </a>
-        <a href="index.html" class="tab ${activeTab === 'consumo' ? 'is-active' : ''}" ${activeTab === 'consumo' ? 'aria-current="page"' : ''}>
+        <a href="simular-desconto.html" class="tab ${activeTab === 'consumo' ? 'is-active' : ''}" ${activeTab === 'consumo' ? 'aria-current="page"' : ''}>
           <svg class="tab__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
             <path d="M13.5 2L5 13h6l-1.5 9L19 11h-6l.5-9z"/>
           </svg>
@@ -91,14 +91,14 @@ class BulbeHeaderDesktop extends HTMLElement {
     this.innerHTML = `
       <header class="topbar-desktop">
         <div class="topbar-desktop__container">
-          <a href="index.html" class="topbar-desktop__logo" aria-label="Bulbe">
+          <a href="index.html" class="topbar-desktop__logo" aria-label="Bulbe — Início">
             <img src="../public/logo.png" alt="Bulbe Logo" style="height: 32px;" />
           </a>
           <nav class="topbar-desktop__nav" aria-label="Navegação desktop">
             <a href="#" class="topbar-desktop__link ${activeTab === 'faturas' ? 'is-active' : ''}" ${activeTab === 'faturas' ? 'aria-current="page"' : ''}>
               Faturas
             </a>
-            <a href="index.html" class="topbar-desktop__link ${activeTab === 'consumo' ? 'is-active' : ''}" ${activeTab === 'consumo' ? 'aria-current="page"' : ''}>
+            <a href="simular-desconto.html" class="topbar-desktop__link ${activeTab === 'consumo' ? 'is-active' : ''}" ${activeTab === 'consumo' ? 'aria-current="page"' : ''}>
               Consumo
             </a>
             <a href="#" class="topbar-desktop__link ${activeTab === 'indicacoes' ? 'is-active' : ''}" ${activeTab === 'indicacoes' ? 'aria-current="page"' : ''}>
