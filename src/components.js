@@ -163,11 +163,18 @@ class BulbeFaturaCard extends HTMLElement {
   }
 }
 customElements.define('bulbe-fatura-card', BulbeFaturaCard);
+
+// Efeito de Blur
 const tooltipImg = document.querySelector('img[src="../public/tooltip.png"]');
 let blurOverlay = null;
+let modalImage = null;
 
+// URL da imagem que será exibida
+const imageUrl = 'public/Camada Bulbinho.png'; // ALTERE PARA SUA IMAGEM
+
+// Clique no ícone = ATIVA blur + mostra imagem
 tooltipImg.addEventListener('click', function(event) {
-  event.stopPropagation(); // Previne clique imediato no overlay
+  event.stopPropagation();
   
   if (!blurOverlay) {
     // Cria o overlay de blur
@@ -175,24 +182,35 @@ tooltipImg.addEventListener('click', function(event) {
     blurOverlay.className = 'blur-overlay';
     document.body.appendChild(blurOverlay);
 
-    // Fecha o blur ao clicar no overlay
-    blurOverlay.addEventListener('click', removeBlur);
-
-    // Fecha ao pressionar ESC
-    document.addEventListener('keydown', handleEsc);
+    // Cria a imagem modal
+    modalImage = document.createElement('img');
+    modalImage.src = imageUrl;
+    modalImage.className = 'modal-image';
+    document.body.appendChild(modalImage);
   }
 });
 
-function removeBlur() {
+// Clique em QUALQUER LUGAR = DESATIVA blur e remove imagem
+document.addEventListener('click', function() {
   if (blurOverlay) {
     blurOverlay.remove();
     blurOverlay = null;
-    document.removeEventListener('keydown', handleEsc);
   }
-}
+  if (modalImage) {
+    modalImage.remove();
+    modalImage = null;
+  }
+});
 
-function handleEsc(event) {
-  if (event.key === 'Escape') {
-    removeBlur();
+// Opcional: fechar ao pressionar ESC
+document.addEventListener('keydown', function(event) {
+  if (event.key === 'Escape' && blurOverlay) {
+    blurOverlay.remove();
+    blurOverlay = null;
+    
+    if (modalImage) {
+      modalImage.remove();
+      modalImage = null;
+    }
   }
-}
+});
