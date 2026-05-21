@@ -42,6 +42,9 @@ class BulbeSheet extends HTMLElement {
     if (tipo === 'resultado') {
       this.classList.add('sheet--result');
     }
+    if (tipo === 'consumo') {
+      this.classList.add('sheet--consumo');
+    }
   }
 }
 customElements.define('bulbe-sheet', BulbeSheet);
