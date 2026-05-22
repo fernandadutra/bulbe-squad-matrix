@@ -43,6 +43,7 @@
 | [Leandro Dias De Oliveira] | [202501589693] | [Engenharia de Software] | [Desenvolvedor] |
 | [Fernanda Vaccillotto Pimenta Dutra] | [202501398881] | [Ciência de Dados] | [Desenvolvedor] |
 | [Mariana Resende Maia] | [202502021348] | [Ciência de Dados] | [Scrum Master] |
+| [Rafael Bentes Fonseca] | [202507011189] | [Ciência de Dados] | [Desenvolvedor]
 
 ### 1.5 Repositório e Entrega
 
