@@ -172,3 +172,54 @@ class BulbeFaturaCard extends HTMLElement {
   }
 }
 customElements.define('bulbe-fatura-card', BulbeFaturaCard);
+
+// Efeito de Blur
+const tooltipImg = document.querySelector('img[src="../public/tooltip.png"]');
+let blurOverlay = null;
+let modalImage = null;
+
+// URL da imagem que será exibida
+const imageUrl = '../public/Camada Bulbinho.png';
+
+// Clique no ícone = ATIVA blur + mostra imagem
+tooltipImg.addEventListener('click', function(event) {
+  event.stopPropagation();
+  
+  if (!blurOverlay) {
+    // Cria o overlay de blur
+    blurOverlay = document.createElement('div');
+    blurOverlay.className = 'blur-overlay';
+    document.body.appendChild(blurOverlay);
+
+    // Cria a imagem modal
+    modalImage = document.createElement('img');
+    modalImage.src = imageUrl;
+    modalImage.className = 'modal-image';
+    document.body.appendChild(modalImage);
+  }
+});
+
+// Clique em QUALQUER LUGAR = DESATIVA blur e remove imagem
+document.addEventListener('click', function() {
+  if (blurOverlay) {
+    blurOverlay.remove();
+    blurOverlay = null;
+  }
+  if (modalImage) {
+    modalImage.remove();
+    modalImage = null;
+  }
+});
+
+// Opcional: fechar ao pressionar ESC
+document.addEventListener('keydown', function(event) {
+  if (event.key === 'Escape' && blurOverlay) {
+    blurOverlay.remove();
+    blurOverlay = null;
+    
+    if (modalImage) {
+      modalImage.remove();
+      modalImage = null;
+    }
+  }
+});
