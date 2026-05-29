@@ -34,10 +34,19 @@
 
       <div class="compare">
         <article class="compare__card compare__card--bad">
-          <h3 class="compare__head">Sem desconto</h3>
+          <h3 class="compare__head">
+            <svg class="compare__icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="8" cy="8" r="7.5" stroke="currentColor" stroke-width="1"/>
+              <path d="M5.5 5.5L10.5 10.5M10.5 5.5L5.5 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            Sem desconto
+          </h3>
           <p class="compare__sub">Você paga</p>
-          <p class="compare__value">R$ <span data-result="fullPrice">350,00</span></p>
-          <p class="compare__tag"><span aria-hidden="true">✗</span> Tarifa cheia</p>
+          <p class="compare__value">
+            <span class="compare__currency">R$</span>
+            <span class="compare__amount" data-result="fullPrice">350,00</span>
+          </p>
+          <p class="compare__tag">Tarifa cheia</p>
         </article>
 
         <span class="compare__arrow" aria-hidden="true">
@@ -48,10 +57,19 @@
         </span>
 
         <article class="compare__card compare__card--good">
-          <h3 class="compare__head">Com Bulbe</h3>
+          <h3 class="compare__head">
+            <svg class="compare__icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="8" cy="8" r="7.5" stroke="currentColor" stroke-width="1"/>
+              <path d="M5 8.5L7 10.5L11 6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Com Bulbe
+          </h3>
           <p class="compare__sub">Você paga</p>
-          <p class="compare__value">R$ <span data-result="bulbePrice">297,50</span></p>
-          <p class="compare__tag"><span aria-hidden="true">✓</span> até 15% desconto</p>
+          <p class="compare__value">
+            <span class="compare__currency">R$</span>
+            <span class="compare__amount" data-result="bulbePrice">297,50</span>
+          </p>
+          <p class="compare__tag">até 15% desconto</p>
         </article>
       </div>
 
@@ -64,7 +82,7 @@
         <button type="button" class="btn btn--success" id="ctaStart">
           Comece agora <span aria-hidden="true">→</span>
         </button>
-        <a href="index.html" class="btn btn--ghost">
+        <a href="simular-desconto.html" class="btn btn--ghost">
           <span aria-hidden="true" class="txt--ghost">←</span> Simular novamente
         </a>
       </div>
