@@ -13,12 +13,12 @@
   --bulbe-amarelo: #FFD400;
   --bulbe-verde-fundo: #E6F9ED;
   --bulbe-verde-profundo: #075E54;
-  
+
   /* Cores de Destaque para os Cards de Métrica (Fidelidade ao Modelo) */
   --bulbe-destaque-borda: #B9F8CF;
   --bulbe-destaque-fundo: #ECFDF5;
   --bulbe-destaque-texto: #157344;
-  
+
   /* Cores Secundárias e Auxiliares */
   --bulbe-laranja-primario: #F1881A;
   --bulbe-laranja-secundario: #F5A93C;
@@ -37,7 +37,7 @@
   --bulbe-azul-claro-borda: #C8D2FB;
   --bulbe-aba-inativa: #C5C5D1;
   --bulbe-texto-fantasma: #536679;
-  
+
   /* Borda Customizada solicitada para o Card de Fatura Atual */
   --bulbe-fatura-card-borda: #E6F1FE;
 }
@@ -87,7 +87,8 @@ bulbe-metric-card {
 }
 
 bulbe-header-desktop {
-  display: none; /* Oculto no mobile por padrão */
+  display: none;
+  /* Oculto no mobile por padrão */
 }
 
 /* Contêiner da Tela Principal (Mobile First) */
@@ -139,11 +140,13 @@ bulbe-sheet {
   background: #fff;
   border-radius: 24px 24px 0 0;
   margin-top: 18px;
-  padding: 28px 22px 100px; /* Espaço para o rodapé fixo */
+  padding: 28px 22px 100px;
+  /* Espaço para o rodapé fixo */
   flex: 1;
   display: flex;
   flex-direction: column;
-  overflow-y: auto; /* Apenas o conteúdo rola */
+  overflow-y: auto;
+  /* Apenas o conteúdo rola */
 }
 
 .sheet--result {
@@ -193,8 +196,10 @@ bulbe-sheet {
 
 /* ---------- Cartão do Simulador (Valor da Fatura Atual) ---------- */
 .card {
-  border: 4px solid var(--bulbe-fatura-card-borda); /* Bordas azuis de 4px conforme solicitado */
-  border-radius: 8px; /* Raio de canto arredondado de 8px conforme solicitado */
+  border: 4px solid var(--bulbe-fatura-card-borda);
+  /* Bordas azuis de 4px conforme solicitado */
+  border-radius: 8px;
+  /* Raio de canto arredondado de 8px conforme solicitado */
   padding: 20px 18px;
   background: #fff;
   margin-bottom: 22px;
@@ -731,7 +736,8 @@ bulbe-metric-card {
 
 /* ---------- TELA PRÉ-GRÁFICO (Consumo) ---------- */
 .sheet--consumo {
-  padding: 20px 0 100px; /* sem padding lateral — movido para .pre-grafico__corpo */
+  padding: 20px 0 100px;
+  /* sem padding lateral — movido para .pre-grafico__corpo */
 }
 
 .pre-grafico__ilustracao {
@@ -833,9 +839,20 @@ bulbe-metric-card {
   min-height: 70px;
 }
 
-.beneficio-card--connect  { background: #edfdf4; border: 1px solid #b9f8cf; }
-.beneficio-card--movement { background: linear-gradient(to right, #eff6ff, #eef2ff); border: 1px solid #bedbff; }
-.beneficio-card--experience { background: #fff4e6; border: 1px solid rgba(255, 158, 27, 0.26); }
+.beneficio-card--connect {
+  background: #edfdf4;
+  border: 1px solid #b9f8cf;
+}
+
+.beneficio-card--movement {
+  background: linear-gradient(to right, #eff6ff, #eef2ff);
+  border: 1px solid #bedbff;
+}
+
+.beneficio-card--experience {
+  background: #fff4e6;
+  border: 1px solid rgba(255, 158, 27, 0.26);
+}
 
 .beneficio-card__icone-wrap {
   width: 32px;
@@ -848,8 +865,13 @@ bulbe-metric-card {
   overflow: hidden;
 }
 
-.beneficio-card__icone-wrap--verde  { background: #26d07c; }
-.beneficio-card__icone-wrap--laranja { background: #ff9e1b; }
+.beneficio-card__icone-wrap--verde {
+  background: #26d07c;
+}
+
+.beneficio-card__icone-wrap--laranja {
+  background: #ff9e1b;
+}
 
 .beneficio-card__icone {
   width: 20px;
@@ -884,9 +906,17 @@ bulbe-metric-card {
   line-height: 1.6;
 }
 
-.beneficio-card__nome--verde   { color: #18814d; }
-.beneficio-card__nome--azul    { color: #0762c7; }
-.beneficio-card__nome--laranja { color: #ff9e1b; }
+.beneficio-card__nome--verde {
+  color: #18814d;
+}
+
+.beneficio-card__nome--azul {
+  color: #0762c7;
+}
+
+.beneficio-card__nome--laranja {
+  color: #ff9e1b;
+}
 
 .beneficio-card__cadeado {
   width: 11px;
@@ -986,6 +1016,7 @@ bulbe-metric-card {
    SUPORTE DE RESPONSIVIDADE COMPLETO PARA DESKTOP E TELAS MAIS LARGAS
    ========================================================================== */
 @media (min-width: 768px) {
+
   /* Configuração do fundo e centralização do contêiner */
   html,
   body {
@@ -1093,7 +1124,8 @@ bulbe-metric-card {
     height: auto;
     min-height: 100vh;
     overflow: visible;
-    padding-top: 72px; /* Altura do cabeçalho desktop fixo */
+    padding-top: 72px;
+    /* Altura do cabeçalho desktop fixo */
     background: var(--bulbe-fundo);
     display: flex;
     align-items: center;
@@ -1256,4 +1288,77 @@ bulbe-metric-card {
     max-width: none;
     margin-left: 0;
   }
+}
+
+/* ========================================
+   Modal do tooltip (Simular desconto)
+   ======================================== */
+
+/* Desktop - Canto direito */
+.modal-image {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  bottom: 0;
+  transform: translateY(-50%);
+  z-index: 1000;
+  max-width: 25%;
+  max-height: 80%;
+  object-fit: contain;
+  cursor: pointer;
+  animation: slideInRight 0.3s ease;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+/* Mobile - Canto inferior direito (no limite) */
+@media (max-width: 768px) {
+  .modal-image {
+    top: auto;
+    bottom: 0;
+    right: 0;
+    transform: none;
+    max-width: 100%;
+    max-height: 100%;
+    animation: slideInUp 0.3s ease;
+  }
+}
+
+.blur-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(4px);
+  z-index: 999;
+  cursor: pointer;
+}
+
+/* Animações */
+@keyframes slideInRight {
+  from {
+    right: -200px;
+    opacity: 0;
+  }
+
+  to {
+    right: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    bottom: -100px;
+    opacity: 0;
+  }
+
+  to {
+    bottom: 0;
+    opacity: 1;
+  }
+}
 }
