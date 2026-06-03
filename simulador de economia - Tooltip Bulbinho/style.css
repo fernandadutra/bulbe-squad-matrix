@@ -1,0 +1,85 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: transparent;
+}
+
+.bulbinho-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 24px 20px 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-shadow: 0 8px 32px rgba(8, 6, 141, 0.18);
+}
+
+.bulbinho-card__fechar {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 32px;
+  height: 32px;
+  border: 0;
+  background: #f0f2f5;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #3e4d5b;
+  cursor: pointer;
+}
+
+.bulbinho-card__intro {
+  font-size: 14px;
+  font-weight: 500;
+  color: #0A1080;
+  line-height: 1.5;
+  padding-right: 36px;
+}
+
+.bulbinho-card__etapas {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.bulbinho-card__etapas li {
+  font-size: 13px;
+  color: #3e4d5b;
+  line-height: 1.5;
+  padding: 8px 12px;
+  border-left: 3px solid #1FCD68;
+  background: #f8fafc;
+  border-radius: 0 8px 8px 0;
+}
+
+.bulbinho-card__etapas li strong {
+  color: #0A1080;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.bulbinho-card__prazo {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: #E6F1FE;
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-size: 13px;
+  color: #054894;
+  line-height: 1.5;
+}
+
+.bulbinho-card__prazo svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.bulbinho-card__prazo strong {
+  color: #0A1080;
+}

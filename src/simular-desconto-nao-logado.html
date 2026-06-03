@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bulbe — Consumo</title>
+  <title>Bulbe — Simular desconto</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
@@ -19,22 +19,27 @@
 
     <bulbe-banner></bulbe-banner>
 
-    <bulbe-sheet tipo="consumo">
-      <img
-        src="../public/pre-grafico.png"
-        alt="Gráficos de consumo em breve"
-        class="pre-grafico__ilustracao"
-      />
-      <div class="pre-grafico__corpo">
-        <p class="pre-grafico__titulo">Seus gráficos aparecerão em breve...</p>
-        <p class="pre-grafico__descricao">
-          Essa tela mostrará gráficos de seu consumo de energia e de sua
-          economia após o recebimento de sua primeira conta.
-        </p>
-        <a href="simular-desconto.html" class="btn btn--success pre-grafico__btn">Simular sua economia →</a>
-        <div class="pre-fatura__divisor" aria-hidden="true"></div>
-        <a href="faturas.html" class="btn btn--ghost pre-grafico__btn">← Voltar</a>
+    <bulbe-sheet>
+      <div class="sheet__head">
+        <h1 class="title">
+          Veja quanto você<br />
+          pode <span class="title--accent">economizar</span><br />
+          na sua conta de luz
+        </h1>
+        <button class="icon-btn title__help" aria-label="Como funciona a simulação">
+          <img src="../public/tooltip.png" alt="Como funciona a simulação"
+            style="width: 26px; height: 26px; object-fit: contain;" />
+        </button>
       </div>
+
+      <p class="lead">Insira o valor da sua última fatura e simule o desconto com a Bulbe.</p>
+
+      <bulbe-fatura-card></bulbe-fatura-card>
+
+      <button form="simulador" type="submit" class="btn btn--primary">
+        Simular <span aria-hidden="true">→</span>
+      </button>
+
     </bulbe-sheet>
 
     <bulbe-footer active-tab="consumo"></bulbe-footer>

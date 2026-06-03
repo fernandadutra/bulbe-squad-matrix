@@ -39,6 +39,100 @@
       <button form="simulador" type="submit" class="btn btn--primary">
         Simular <span aria-hidden="true">→</span>
       </button>
+
+      <div class="sim-detalhe">
+        <p class="sim-detalhe__secao-titulo">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <circle cx="3" cy="4" r="1.5" fill="#3e4d5b"/>
+            <rect x="6" y="3" width="8" height="2" rx="1" fill="#3e4d5b"/>
+            <circle cx="3" cy="8" r="1.5" fill="#3e4d5b"/>
+            <rect x="6" y="7" width="8" height="2" rx="1" fill="#3e4d5b"/>
+            <circle cx="3" cy="12" r="1.5" fill="#3e4d5b"/>
+            <rect x="6" y="11" width="8" height="2" rx="1" fill="#3e4d5b"/>
+          </svg>
+          Detalhamento das simulações
+        </p>
+
+        <div class="sim-detalhe__item is-open">
+          <button type="button" class="sim-detalhe__header" aria-expanded="true">
+            <div class="sim-detalhe__accent"></div>
+            <div class="sim-detalhe__info">
+              <span class="sim-detalhe__data">Simulação de 17/06/2026</span>
+              <span class="sim-detalhe__valor">R$ 220,44</span>
+            </div>
+            <svg class="sim-detalhe__chevron" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M6 9l6 6 6-6" stroke="#3e4d5b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="sim-detalhe__economia-bar">
+            <span>Economia:</span> <strong>R$ 29,87</strong>
+          </div>
+          <div class="sim-detalhe__corpo">
+            <div class="sim-detalhe__linhas">
+              <div class="sim-detalhe__linha">
+                <div class="sim-detalhe__linha-esq">
+                  <span class="sim-detalhe__fonte">CEMIG</span>
+                  <span class="sim-detalhe__kwh">50 kWh</span>
+                </div>
+                <span class="sim-detalhe__preco">R$ 51,18</span>
+              </div>
+              <div class="sim-detalhe__linha">
+                <div class="sim-detalhe__linha-esq">
+                  <span class="sim-detalhe__fonte">Bulbe Energia</span>
+                  <span class="sim-detalhe__kwh">199 kWh</span>
+                </div>
+                <div class="sim-detalhe__preco-duplo">
+                  <span class="sim-detalhe__preco-riscado">R$ 199,13</span>
+                  <span class="sim-detalhe__preco-novo">R$ 169,26</span>
+                </div>
+              </div>
+              <hr class="sim-detalhe__divisor" />
+              <div class="sim-detalhe__linha sim-detalhe__linha--subtotal">
+                <div class="sim-detalhe__linha-esq">
+                  <span class="sim-detalhe__fonte">Subtotal 1</span>
+                  <span class="sim-detalhe__kwh">249 kWh</span>
+                </div>
+                <span class="sim-detalhe__preco">R$ 220,44</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sim-detalhe__item">
+          <button type="button" class="sim-detalhe__header" aria-expanded="false">
+            <div class="sim-detalhe__accent"></div>
+            <div class="sim-detalhe__info">
+              <span class="sim-detalhe__data">Simulação de 09/06/2026</span>
+              <span class="sim-detalhe__valor">R$ 221,39</span>
+            </div>
+            <svg class="sim-detalhe__chevron" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M6 9l6 6 6-6" stroke="#3e4d5b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="sim-detalhe__economia-bar">
+            <span>Economia:</span> <strong>R$ 21,87</strong>
+          </div>
+          <div class="sim-detalhe__corpo"></div>
+        </div>
+
+        <div class="sim-detalhe__item">
+          <button type="button" class="sim-detalhe__header" aria-expanded="false">
+            <div class="sim-detalhe__accent"></div>
+            <div class="sim-detalhe__info">
+              <span class="sim-detalhe__data">Simulação de 23/05/2026</span>
+              <span class="sim-detalhe__valor">R$ 271,29</span>
+            </div>
+            <svg class="sim-detalhe__chevron" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M6 9l6 6 6-6" stroke="#3e4d5b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="sim-detalhe__economia-bar">
+            <span>Economia:</span> <strong>R$ 31,24</strong>
+          </div>
+          <div class="sim-detalhe__corpo"></div>
+        </div>
+      </div>
+
     </bulbe-sheet>
 
     <bulbe-footer active-tab="consumo"></bulbe-footer>
