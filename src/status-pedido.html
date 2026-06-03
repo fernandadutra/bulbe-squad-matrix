@@ -15,12 +15,17 @@
 <body>
   <div class="screen">
     <bulbe-header-desktop active-tab="faturas"></bulbe-header-desktop>
-    <bulbe-header></bulbe-header>
+    <bulbe-header variant="app"></bulbe-header>
 
     <bulbe-banner></bulbe-banner>
 
     <bulbe-sheet>
-      <h1 class="status-titulo">Status do seu pedido</h1>
+      <div class="sheet__head">
+        <h1 class="status-titulo">Status do seu pedido</h1>
+        <button class="icon-btn title__help" aria-label="Entender as etapas do pedido" type="button">
+          <img src="../public/tooltip.png" alt="" style="width: 26px; height: 26px; object-fit: contain;" aria-hidden="true" />
+        </button>
+      </div>
       <p class="status-card__descricao">Acompanhe em tempo real cada etapa da implementação do seu serviço.</p>
 
       <div class="progress-tracker">
@@ -63,9 +68,14 @@
         <p class="status-card__descricao">Sua solicitação está sendo analisada pela equipe Bulbe.</p>
       </div>
 
-      <a href="simular-desconto.html" class="btn btn--ghost">
-        <span aria-hidden="true" class="txt--ghost">←</span> Voltar
-      </a>
+      <div class="status-pedido__acoes">
+        <a href="impulsione-fatura.html" class="btn btn--success">
+          Impulsione sua primeira fatura &nbsp;→
+        </a>
+        <a href="simular-desconto.html" class="btn btn--ghost">
+          <span aria-hidden="true" class="txt--ghost">←</span> Voltar
+        </a>
+      </div>
     </bulbe-sheet>
 
     <bulbe-footer active-tab="faturas"></bulbe-footer>
