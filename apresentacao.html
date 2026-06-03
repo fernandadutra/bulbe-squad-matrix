@@ -1,0 +1,2128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bulbe Energia — Squad Matrix · Apresentação</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+  <style>
+    /* ==========================================================================
+       APRESENTAÇÃO SQUAD MATRIX — IDENTIDADE VISUAL BULBE ENERGIA
+       ========================================================================== */
+    :root {
+      --bulbe-azul: #0A1080;
+      --bulbe-azul-profundo: #060B6E;
+      --bulbe-azul-noite: #04063f;
+      --bulbe-azul-suave: #1B25A8;
+      --bulbe-verde: #1FCD68;
+      --bulbe-verde-forte: #16A356;
+      --bulbe-amarelo: #FFD400;
+      --bulbe-laranja: #FF9E1B;
+      --bulbe-vermelho: #F60505;
+      --branco: #ffffff;
+      --azul-vidro: rgba(255, 255, 255, 0.06);
+      --azul-vidro-borda: rgba(255, 255, 255, 0.12);
+      --texto-suave: rgba(255, 255, 255, 0.72);
+      --texto-fraco: rgba(255, 255, 255, 0.5);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html,
+    body {
+      height: 100%;
+      font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+      background: var(--bulbe-azul-noite);
+      color: #fff;
+      overflow: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ---------- Fundo institucional com brilho verde e malha de painéis solares ---------- */
+    .deck-bg {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      background:
+        radial-gradient(1200px 800px at 80% -10%, rgba(31, 205, 104, 0.18), transparent 60%),
+        radial-gradient(900px 700px at -5% 100%, rgba(27, 37, 168, 0.55), transparent 55%),
+        radial-gradient(700px 500px at 50% 50%, rgba(255, 212, 0, 0.05), transparent 70%),
+        linear-gradient(160deg, #0A1080 0%, #060B6E 50%, #04063f 100%);
+    }
+
+    .deck-bg::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: 0.4;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+      background-size: 54px 54px;
+      mask-image: radial-gradient(circle at 50% 40%, #000 30%, transparent 85%);
+      -webkit-mask-image: radial-gradient(circle at 50% 40%, #000 30%, transparent 85%);
+    }
+
+    .glow {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(80px);
+      z-index: 0;
+      pointer-events: none;
+      animation: float 14s ease-in-out infinite;
+    }
+
+    .glow--green {
+      width: 420px;
+      height: 420px;
+      background: rgba(31, 205, 104, 0.22);
+      top: -120px;
+      right: -80px;
+    }
+
+    .glow--yellow {
+      width: 320px;
+      height: 320px;
+      background: rgba(255, 212, 0, 0.10);
+      bottom: -120px;
+      left: 8%;
+      animation-delay: -5s;
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translate(0, 0);
+      }
+
+      50% {
+        transform: translate(-30px, 40px);
+      }
+    }
+
+    /* ---------- Estrutura do deck ---------- */
+    .deck {
+      position: relative;
+      z-index: 1;
+      height: 100vh;
+      width: 100vw;
+      overflow: hidden;
+    }
+
+    .track {
+      display: flex;
+      height: 100%;
+      transition: transform 0.7s cubic-bezier(0.65, 0.05, 0.2, 1);
+    }
+
+    .slide {
+      flex: 0 0 100vw;
+      height: 100vh;
+      padding: 92px 84px 88px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* ---------- Marca: chip do squad e logo ---------- */
+    .brandbar {
+      position: fixed;
+      top: 26px;
+      left: 84px;
+      right: 84px;
+      z-index: 30;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      pointer-events: none;
+      transition: opacity 0.4s ease;
+    }
+
+    body.on-cover .brandbar {
+      opacity: 0;
+    }
+
+    .brandbar img {
+      height: 30px;
+      filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.4));
+    }
+
+    .brandbar .squad-chip {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--bulbe-verde);
+      border: 1px solid rgba(31, 205, 104, 0.4);
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: rgba(31, 205, 104, 0.08);
+    }
+
+    /* ---------- Tipografia ---------- */
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--bulbe-verde);
+      margin-bottom: 22px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 30px;
+      height: 2px;
+      background: var(--bulbe-verde);
+      border-radius: 2px;
+    }
+
+    .slide-num {
+      position: absolute;
+      top: 50%;
+      right: 40px;
+      transform: translateY(-50%);
+      font-size: 200px;
+      font-weight: 900;
+      color: rgba(255, 255, 255, 0.025);
+      line-height: 1;
+      pointer-events: none;
+      z-index: 0;
+      letter-spacing: -0.04em;
+    }
+
+    h1.display {
+      font-size: clamp(38px, 5vw, 76px);
+      font-weight: 900;
+      line-height: 1.04;
+      letter-spacing: -0.03em;
+      max-width: 16ch;
+    }
+
+    h2.headline {
+      font-size: clamp(34px, 4.2vw, 60px);
+      font-weight: 800;
+      line-height: 1.06;
+      letter-spacing: -0.025em;
+      max-width: 18ch;
+      margin-bottom: 14px;
+    }
+
+    .accent {
+      color: var(--bulbe-verde);
+    }
+
+    .accent-y {
+      color: var(--bulbe-amarelo);
+    }
+
+    .sub {
+      font-size: clamp(16px, 1.5vw, 21px);
+      color: var(--texto-suave);
+      font-weight: 500;
+      line-height: 1.5;
+      max-width: 56ch;
+    }
+
+    .content-z {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* ---------- Animação de revelação por slide ---------- */
+    [data-reveal] {
+      opacity: 0;
+      transform: translateY(28px);
+    }
+
+    .slide.is-active [data-reveal] {
+      animation: reveal 0.75s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+      animation-delay: calc(var(--d, 0) * 1ms);
+    }
+
+    @keyframes reveal {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    [data-reveal-x] {
+      opacity: 0;
+      transform: translateX(40px);
+    }
+
+    .slide.is-active [data-reveal-x] {
+      animation: revealX 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+      animation-delay: calc(var(--d, 0) * 1ms);
+    }
+
+    @keyframes revealX {
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    /* ==========================================================================
+       SLIDE 1 — CAPA
+       ========================================================================== */
+    .cover {
+      display: grid;
+      grid-template-columns: 1.35fr 1fr;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .cover__logo {
+      height: 56px;
+      margin-bottom: 20px;
+    }
+
+    .cover h1 {
+      font-size: clamp(40px, 4.6vw, 68px);
+      font-weight: 900;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+    }
+
+    .cover__sub {
+      font-size: clamp(17px, 1.6vw, 22px);
+      color: var(--texto-suave);
+      font-weight: 500;
+      margin: 16px 0 22px;
+      max-width: 44ch;
+      line-height: 1.5;
+    }
+
+    .squad {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      max-width: 46ch;
+    }
+
+    .squad__title {
+      width: 100%;
+      font-size: 13px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--bulbe-verde);
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .squad__name {
+      font-size: 14px;
+      font-weight: 600;
+      color: #fff;
+      padding: 9px 16px;
+      border-radius: 999px;
+      background: var(--azul-vidro);
+      border: 1px solid var(--azul-vidro-borda);
+      backdrop-filter: blur(6px);
+    }
+
+    .mascot-stage {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .mascot-stage::before {
+      content: "";
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(31, 205, 104, 0.25), transparent 65%);
+      animation: pulse 4s ease-in-out infinite;
+    }
+
+    .mascot {
+      width: 100%;
+      max-width: 380px;
+      position: relative;
+      z-index: 2;
+      filter: drop-shadow(0 30px 50px rgba(0, 0, 0, 0.45));
+      animation: bob 5s ease-in-out infinite;
+    }
+
+    @keyframes bob {
+
+      0%,
+      100% {
+        transform: translateY(0) rotate(-1deg);
+      }
+
+      50% {
+        transform: translateY(-18px) rotate(1deg);
+      }
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        transform: scale(0.92);
+        opacity: 0.7;
+      }
+
+      50% {
+        transform: scale(1.05);
+        opacity: 1;
+      }
+    }
+
+    .orbit-tag {
+      position: absolute;
+      z-index: 3;
+      font-size: 13px;
+      font-weight: 700;
+      background: #fff;
+      color: var(--bulbe-azul);
+      padding: 8px 14px;
+      border-radius: 12px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .orbit-tag .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+    }
+
+    .orbit-tag--1 {
+      top: 14%;
+      left: -6%;
+      animation: bob 6s ease-in-out infinite;
+    }
+
+    .orbit-tag--2 {
+      bottom: 18%;
+      right: -4%;
+      animation: bob 5.5s ease-in-out infinite reverse;
+    }
+
+    /* ==========================================================================
+       SLIDE 2 — PROBLEMA · GARGALO DOS 90 DIAS
+       ========================================================================== */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 54px;
+      align-items: center;
+    }
+
+    .timeline {
+      position: relative;
+      padding: 30px 0;
+      margin-top: 8px;
+    }
+
+    .timeline__bar {
+      height: 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .timeline__fill {
+      position: absolute;
+      inset: 0;
+      width: 0;
+      background: linear-gradient(90deg, var(--bulbe-verde), var(--bulbe-amarelo) 60%, var(--bulbe-vermelho));
+      border-radius: 999px;
+      transition: width 1.6s cubic-bezier(0.3, 0.8, 0.3, 1) 0.3s;
+    }
+
+    .is-active .timeline__fill.run {
+      width: 100%;
+    }
+
+    .timeline__pts {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 16px;
+    }
+
+    .timeline__pt {
+      text-align: center;
+    }
+
+    .timeline__pt b {
+      display: block;
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .timeline__pt span {
+      font-size: 12px;
+      color: var(--texto-fraco);
+    }
+
+    .bignum {
+      font-size: 150px;
+      font-weight: 900;
+      line-height: 0.9;
+      letter-spacing: -0.05em;
+      background: linear-gradient(180deg, #fff, var(--bulbe-amarelo));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .bignum small {
+      font-size: 28px;
+      -webkit-text-fill-color: var(--bulbe-amarelo);
+      font-weight: 700;
+      margin-left: 12px;
+      letter-spacing: 0;
+    }
+
+    .pain-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .pain {
+      display: flex;
+      gap: 14px;
+      padding: 16px 18px;
+      border-radius: 14px;
+      background: var(--azul-vidro);
+      border: 1px solid var(--azul-vidro-borda);
+    }
+
+    .pain__icon {
+      width: 38px;
+      height: 38px;
+      flex-shrink: 0;
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      font-size: 19px;
+      background: rgba(246, 5, 5, 0.15);
+      border: 1px solid rgba(246, 5, 5, 0.3);
+    }
+
+    .pain b {
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .pain p {
+      font-size: 13px;
+      color: var(--texto-suave);
+      margin-top: 2px;
+      line-height: 1.4;
+    }
+
+    .quote {
+      margin-top: 26px;
+      padding: 22px 24px;
+      border-radius: 16px;
+      background: rgba(31, 205, 104, 0.08);
+      border-left: 4px solid var(--bulbe-verde);
+      position: relative;
+    }
+
+    .quote p {
+      font-size: 17px;
+      font-style: italic;
+      line-height: 1.5;
+      color: #fff;
+    }
+
+    .quote cite {
+      display: block;
+      margin-top: 10px;
+      font-size: 13px;
+      font-style: normal;
+      color: var(--bulbe-verde);
+      font-weight: 700;
+    }
+
+    /* ==========================================================================
+       SLIDE 3 — HIPÓTESE
+       ========================================================================== */
+    .hyp-flow {
+      display: flex;
+      align-items: stretch;
+      gap: 16px;
+      margin: 32px 0 38px;
+      flex-wrap: wrap;
+    }
+
+    .hyp-card {
+      flex: 1;
+      min-width: 180px;
+      padding: 22px;
+      border-radius: 18px;
+      text-align: center;
+      background: var(--azul-vidro);
+      border: 1px solid var(--azul-vidro-borda);
+    }
+
+    .hyp-card .ico {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .hyp-card b {
+      display: block;
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .hyp-card span {
+      font-size: 12.5px;
+      color: var(--texto-suave);
+      line-height: 1.4;
+    }
+
+    .hyp-plus {
+      display: grid;
+      place-items: center;
+      font-size: 28px;
+      color: var(--bulbe-verde);
+      font-weight: 800;
+    }
+
+    .hyp-result {
+      flex: 1.1;
+      min-width: 200px;
+      padding: 22px;
+      border-radius: 18px;
+      text-align: center;
+      background: linear-gradient(135deg, var(--bulbe-verde), var(--bulbe-verde-forte));
+      color: #04063f;
+      box-shadow: 0 18px 40px rgba(31, 205, 104, 0.3);
+    }
+
+    .hyp-result b {
+      color: #04063f;
+    }
+
+    .hyp-result span {
+      color: rgba(4, 6, 63, 0.78);
+      font-weight: 600;
+    }
+
+    .just-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .just {
+      padding: 22px;
+      border-radius: 16px;
+      background: var(--azul-vidro);
+      border: 1px solid var(--azul-vidro-borda);
+      border-top: 3px solid var(--bulbe-amarelo);
+    }
+
+    .just .n {
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--bulbe-amarelo);
+      letter-spacing: 0.1em;
+    }
+
+    .just p {
+      font-size: 14.5px;
+      color: #fff;
+      margin-top: 8px;
+      line-height: 1.45;
+      font-weight: 500;
+    }
+
+    /* ==========================================================================
+       SLIDE 4 — BENCHMARK
+       ========================================================================== */
+    .bench {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 14px;
+      max-width: 1000px;
+    }
+
+    .bench-row {
+      display: grid;
+      grid-template-columns: 220px 1fr 320px;
+      align-items: center;
+      gap: 22px;
+      padding: 20px 24px;
+      border-radius: 16px;
+      background: var(--azul-vidro);
+      border: 1px solid var(--azul-vidro-borda);
+    }
+
+    .bench-row--us {
+      background: rgba(255, 212, 0, 0.07);
+      border-color: rgba(255, 212, 0, 0.35);
+    }
+
+    .bench-co b {
+      font-size: 19px;
+      font-weight: 800;
+    }
+
+    .bench-co span {
+      display: block;
+      font-size: 12px;
+      color: var(--texto-fraco);
+      margin-top: 2px;
+    }
+
+    .bench-bar {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .bar-track {
+      flex: 1;
+      height: 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      height: 100%;
+      width: 0;
+      border-radius: 999px;
+      transition: width 1.3s cubic-bezier(0.3, 0.8, 0.3, 1);
+    }
+
+    .is-active .bar-fill.run {
+      width: var(--w);
+    }
+
+    .bar-fill--good {
+      background: linear-gradient(90deg, var(--bulbe-verde), var(--bulbe-verde-forte));
+    }
+
+    .bar-fill--mid {
+      background: linear-gradient(90deg, var(--bulbe-amarelo), var(--bulbe-laranja));
+    }
+
+    .bar-fill--low {
+      background: linear-gradient(90deg, var(--bulbe-laranja), var(--bulbe-vermelho));
+    }
+
+    .bench-nota {
+      font-size: 26px;
+      font-weight: 900;
+      width: 78px;
+    }
+
+    .bench-nota small {
+      font-size: 14px;
+      color: var(--texto-fraco);
+      font-weight: 600;
+    }
+
+    .bench-desc {
+      font-size: 13.5px;
+      color: var(--texto-suave);
+      line-height: 1.4;
+    }
+
+    .bench-opp {
+      margin-top: 8px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--bulbe-amarelo);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    /* ==========================================================================
+       SLIDE 5 — PERSONAS
+       ========================================================================== */
+    .personas {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 18px;
+    }
+
+    .persona {
+      padding: 28px 24px;
+      border-radius: 22px;
+      position: relative;
+      overflow: hidden;
+      background: var(--azul-vidro);
+      border: 1px solid var(--azul-vidro-borda);
+      transition: transform 0.3s ease;
+    }
+
+    .slide.is-active .persona:hover {
+      transform: translateY(-6px);
+    }
+
+    .persona::after {
+      content: "";
+      position: absolute;
+      top: -40px;
+      right: -40px;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: var(--pc, var(--bulbe-verde));
+      opacity: 0.12;
+    }
+
+    .persona__avatar {
+      width: 76px;
+      height: 76px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: 32px;
+      margin-bottom: 18px;
+      border: 2px solid var(--pc);
+      background: color-mix(in srgb, var(--pc) 18%, transparent);
+    }
+
+    .persona__name {
+      font-size: 21px;
+      font-weight: 800;
+    }
+
+    .persona__role {
+      font-size: 12.5px;
+      color: var(--texto-fraco);
+      margin-bottom: 16px;
+    }
+
+    .persona__desc {
+      font-size: 14px;
+      color: var(--texto-suave);
+      line-height: 1.5;
+      min-height: 92px;
+    }
+
+    .persona__foco {
+      margin-top: 16px;
+      padding: 12px 14px;
+      border-radius: 12px;
+      font-size: 13px;
+      font-weight: 700;
+      background: color-mix(in srgb, var(--pc) 16%, transparent);
+      color: var(--pc);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* ==========================================================================
+       SLIDES 6–8 — SOLUÇÃO COM MOCKUP DE CELULAR (telas reais do app)
+       ========================================================================== */
+    .solution {
+      display: grid;
+      grid-template-columns: 360px 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    .phone {
+      width: 312px;
+      height: 624px;
+      border-radius: 44px;
+      padding: 12px;
+      margin: 0 auto;
+      background: linear-gradient(160deg, #1a2270, #04063f);
+      box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5), inset 0 0 0 2px rgba(255, 255, 255, 0.08);
+      position: relative;
+    }
+
+    .phone::before {
+      content: "";
+      position: absolute;
+      top: 22px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 110px;
+      height: 26px;
+      background: #04063f;
+      border-radius: 0 0 16px 16px;
+      z-index: 3;
+    }
+
+    .phone__screen {
+      width: 100%;
+      height: 100%;
+      border-radius: 32px;
+      overflow: hidden;
+      background: #0A1080;
+      position: relative;
+    }
+
+    .phone__screen iframe {
+      width: 390px;
+      height: 818px;
+      border: 0;
+      transform: scale(0.738);
+      transform-origin: top left;
+      display: block;
+      pointer-events: none;
+    }
+
+    .phone-halo {
+      position: absolute;
+      inset: -30px;
+      border-radius: 60px;
+      z-index: -1;
+      background: radial-gradient(circle, rgba(31, 205, 104, 0.25), transparent 70%);
+      filter: blur(20px);
+    }
+
+    .feat-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      max-width: 620px;
+    }
+
+    .feat {
+      display: flex;
+      gap: 18px;
+      padding: 20px 22px;
+      border-radius: 16px;
+      background: var(--azul-vidro);
+      border: 1px solid var(--azul-vidro-borda);
+    }
+
+    .feat__num {
+      width: 44px;
+      height: 44px;
+      flex-shrink: 0;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      font-size: 19px;
+      font-weight: 900;
+      color: #04063f;
+      background: linear-gradient(135deg, var(--bulbe-verde), var(--bulbe-amarelo));
+    }
+
+    .feat b {
+      font-size: 17px;
+      font-weight: 800;
+    }
+
+    .feat p {
+      font-size: 14px;
+      color: var(--texto-suave);
+      margin-top: 4px;
+      line-height: 1.5;
+    }
+
+    /* ==========================================================================
+       SLIDE 9 — ACESSIBILIDADE
+       ========================================================================== */
+    .a11y {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 24px;
+    }
+
+    .a11y-card {
+      padding: 30px 26px;
+      border-radius: 20px;
+      position: relative;
+      background: var(--azul-vidro);
+      border: 1px solid var(--azul-vidro-borda);
+    }
+
+    .a11y-card .ico {
+      width: 60px;
+      height: 60px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      font-size: 28px;
+      margin-bottom: 18px;
+      background: rgba(31, 205, 104, 0.14);
+      border: 1px solid rgba(31, 205, 104, 0.3);
+    }
+
+    .a11y-card h3 {
+      font-size: 20px;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    .a11y-card p {
+      font-size: 14px;
+      color: var(--texto-suave);
+      line-height: 1.55;
+    }
+
+    .a11y-demo {
+      margin-top: 16px;
+    }
+
+    .contrast-demo {
+      display: flex;
+      gap: 8px;
+    }
+
+    .contrast-demo span {
+      flex: 1;
+      padding: 10px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .demo-btn {
+      width: 100%;
+      padding: 14px;
+      border-radius: 12px;
+      background: var(--bulbe-azul);
+      color: #fff;
+      font-weight: 700;
+      font-size: 15px;
+      text-align: center;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    /* ==========================================================================
+       SLIDE 10 — CONCLUSÃO / KPIs
+       ========================================================================== */
+    .kpis {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin: 30px 0 40px;
+    }
+
+    .kpi {
+      padding: 30px 26px;
+      border-radius: 22px;
+      position: relative;
+      overflow: hidden;
+      background: var(--azul-vidro);
+      border: 1px solid var(--azul-vidro-borda);
+    }
+
+    .kpi__tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 38px;
+      margin-bottom: 14px;
+    }
+
+    .kpi h3 {
+      font-size: 21px;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    .kpi h3 .arrow-down {
+      color: var(--bulbe-verde);
+    }
+
+    .kpi h3 .arrow-up {
+      color: var(--bulbe-amarelo);
+    }
+
+    .kpi p {
+      font-size: 14px;
+      color: var(--texto-suave);
+      line-height: 1.55;
+    }
+
+    .kpi--up {
+      border-top: 3px solid var(--bulbe-amarelo);
+    }
+
+    .kpi--down {
+      border-top: 3px solid var(--bulbe-verde);
+    }
+
+    .closing {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      padding: 26px 30px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, rgba(31, 205, 104, 0.14), rgba(255, 212, 0, 0.06));
+      border: 1px solid rgba(31, 205, 104, 0.3);
+    }
+
+    .closing img.mini-mascot {
+      width: 88px;
+      height: 88px;
+      animation: bob 5s ease-in-out infinite;
+    }
+
+    .closing__txt b {
+      font-size: 28px;
+      font-weight: 900;
+    }
+
+    .closing__txt span {
+      display: block;
+      font-size: 15px;
+      color: var(--texto-suave);
+      margin-top: 4px;
+    }
+
+    .closing img.logo {
+      height: 36px;
+      margin-left: auto;
+    }
+
+    /* ==========================================================================
+       NAVEGAÇÃO
+       ========================================================================== */
+    .progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 4px;
+      background: var(--bulbe-verde);
+      z-index: 40;
+      transition: width 0.6s ease;
+      box-shadow: 0 0 12px var(--bulbe-verde);
+    }
+
+    .nav {
+      position: fixed;
+      bottom: 26px;
+      right: 32px;
+      z-index: 40;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .nav__btn {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      border: 1px solid var(--azul-vidro-borda);
+      background: var(--azul-vidro);
+      color: #fff;
+      font-size: 20px;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      backdrop-filter: blur(8px);
+      transition: all 0.2s ease;
+    }
+
+    .nav__btn:hover {
+      background: var(--bulbe-verde);
+      color: #04063f;
+      border-color: var(--bulbe-verde);
+      transform: scale(1.06);
+    }
+
+    .nav__count {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--texto-suave);
+      min-width: 52px;
+      text-align: center;
+    }
+
+    .nav__count b {
+      color: #fff;
+    }
+
+    .dots {
+      position: fixed;
+      bottom: 30px;
+      left: 32px;
+      z-index: 40;
+      display: flex;
+      gap: 9px;
+    }
+
+    .dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.22);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .dot.is-active {
+      background: var(--bulbe-verde);
+      transform: scale(1.35);
+      box-shadow: 0 0 10px var(--bulbe-verde);
+    }
+
+    .hint {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 40;
+      font-size: 12px;
+      color: var(--texto-fraco);
+      letter-spacing: 0.05em;
+      animation: fadeHint 1s ease 3s forwards;
+      opacity: 1;
+    }
+
+    .hint kbd {
+      background: var(--azul-vidro);
+      border: 1px solid var(--azul-vidro-borda);
+      border-radius: 6px;
+      padding: 2px 7px;
+      font-family: inherit;
+      font-size: 11px;
+      margin: 0 2px;
+    }
+
+    @keyframes fadeHint {
+      to {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+
+    /* ---------- Tablet (≤ 1100px) ---------- */
+    @media (max-width: 1100px) {
+      .slide {
+        padding: 56px 40px 80px;
+      }
+
+      .brandbar {
+        left: 40px;
+        right: 40px;
+      }
+
+      .cover,
+      .grid-2,
+      .solution {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      .mascot-stage,
+      .slide-num {
+        display: none;
+      }
+
+      .personas,
+      .just-grid,
+      .a11y,
+      .kpis,
+      .hyp-flow {
+        grid-template-columns: 1fr;
+      }
+
+      .bench-row {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .phone {
+        width: 260px;
+        height: 520px;
+      }
+
+      .phone__screen iframe {
+        width: 390px;
+        height: 818px;
+        transform: scale(0.615);
+      }
+    }
+
+    /* ---------- Mobile (≤ 768px) ---------- */
+    @media (max-width: 768px) {
+
+      html,
+      body {
+        overflow: auto;
+      }
+
+      .deck {
+        height: auto;
+        overflow: visible;
+      }
+
+      .track {
+        flex-direction: column;
+        height: auto;
+        transition: none;
+        transform: none !important;
+      }
+
+      .slide {
+        flex: none;
+        width: 100%;
+        height: auto;
+        min-height: 100svh;
+        padding: 80px 20px 96px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+      }
+
+      /* Brandbar */
+      .brandbar {
+        left: 20px;
+        right: 20px;
+        top: 14px;
+      }
+
+      .brandbar img {
+        height: 22px;
+      }
+
+      .brandbar .squad-chip {
+        font-size: 10px;
+        padding: 4px 10px;
+      }
+
+      body.on-cover .brandbar {
+        opacity: 1;
+      }
+
+      /* Tipografia */
+      h1.display {
+        font-size: clamp(28px, 7vw, 42px);
+      }
+
+      h2.headline {
+        font-size: clamp(24px, 6.5vw, 38px);
+      }
+
+      .sub {
+        font-size: 15px;
+      }
+
+      .eyebrow {
+        font-size: 11px;
+        margin-bottom: 14px;
+      }
+
+      .bignum {
+        font-size: 80px;
+      }
+
+      .bignum small {
+        font-size: 20px;
+      }
+
+      /* Capa */
+      .cover {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .cover h1 {
+        font-size: clamp(26px, 7vw, 40px);
+      }
+
+      .cover__sub {
+        font-size: 15px;
+        margin: 14px 0 22px;
+      }
+
+      .cover__logo {
+        height: 38px;
+        margin-bottom: 20px;
+      }
+
+      .squad {
+        gap: 7px;
+      }
+
+      .squad__name {
+        font-size: 13px;
+        padding: 7px 13px;
+      }
+
+      /* Grids */
+      .grid-2,
+      .solution {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .personas {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .just-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .a11y {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .kpis {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .hyp-flow {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .hyp-plus {
+        font-size: 20px;
+      }
+
+      /* Phone mockup — escondido no mobile */
+      .phone {
+        display: none;
+      }
+
+      /* Bench */
+      .bench-row {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        padding: 14px 16px;
+      }
+
+      .bench-co b {
+        font-size: 16px;
+      }
+
+      .bench-nota {
+        font-size: 22px;
+      }
+
+      /* Pain / feat / cards */
+      .pain {
+        padding: 12px 14px;
+        gap: 10px;
+      }
+
+      .pain__icon {
+        width: 32px;
+        height: 32px;
+        font-size: 16px;
+      }
+
+      .feat {
+        padding: 14px 16px;
+        gap: 12px;
+      }
+
+      .feat__num {
+        width: 36px;
+        height: 36px;
+        font-size: 16px;
+      }
+
+      .feat b {
+        font-size: 15px;
+      }
+
+      .feat p {
+        font-size: 13px;
+      }
+
+      /* Quote */
+      .quote p {
+        font-size: 14px;
+      }
+
+      .quote cite {
+        font-size: 12px;
+      }
+
+      /* KPI / a11y */
+      .kpi {
+        padding: 20px 18px;
+      }
+
+      .kpi h3 {
+        font-size: 17px;
+      }
+
+      .kpi p {
+        font-size: 13px;
+      }
+
+      .a11y-card {
+        padding: 20px 18px;
+      }
+
+      .a11y-card h3 {
+        font-size: 17px;
+      }
+
+      /* Closing */
+      .closing {
+        flex-wrap: wrap;
+        gap: 14px;
+        padding: 18px 20px;
+      }
+
+      .closing img.mini-mascot {
+        width: 64px;
+        height: 64px;
+      }
+
+      .closing__txt b {
+        font-size: 20px;
+      }
+
+      .closing__txt span {
+        font-size: 13px;
+      }
+
+      .closing img.logo {
+        height: 26px;
+        margin-left: 0;
+      }
+
+      /* Navegação — botões reposicionados */
+      .nav {
+        bottom: 16px;
+        right: 16px;
+        gap: 10px;
+      }
+
+      .nav__btn {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+      }
+
+      .nav__count {
+        font-size: 13px;
+      }
+
+      .dots {
+        bottom: 20px;
+        left: 16px;
+      }
+
+      .hint {
+        display: none;
+      }
+
+      .progress {
+        display: none;
+      }
+    }
+
+    /* ---------- Phones pequenos (≤ 400px) ---------- */
+    @media (max-width: 400px) {
+      .slide {
+        padding: 72px 14px 88px;
+      }
+
+      .brandbar {
+        left: 14px;
+        right: 14px;
+      }
+
+      .squad__name {
+        font-size: 12px;
+        padding: 6px 11px;
+      }
+
+      .bignum {
+        font-size: 64px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="deck-bg"></div>
+  <div class="glow glow--green"></div>
+  <div class="glow glow--yellow"></div>
+
+  <div class="progress" id="progress"></div>
+  <div class="brandbar">
+    <img src="public/logo.png" alt="Bulbe Energia" />
+    <span class="squad-chip">Squad Matrix · Ibmec 2026.1</span>
+  </div>
+
+  <div class="deck">
+    <div class="track" id="track">
+
+      <!-- ============ SLIDE 1 · CAPA ============ -->
+      <section class="slide cover">
+        <div class="content-z">
+          <img class="cover__logo" src="public/logo.png" alt="Bulbe" data-reveal style="--d:0" />
+          <h1 data-reveal style="--d:120">
+            Inovação na <span class="accent">Jornada do Cliente</span>:<br>
+            Reduzindo a Inadimplência e Engajando o Usuário
+          </h1>
+          <p class="cover__sub" data-reveal style="--d:260">
+            Solução de Interface Mobile para a Fase de <b style="color:#fff">Homologação</b> da Bulbe Energia.
+          </p>
+          <div class="squad" data-reveal style="--d:400">
+            <span class="squad__title">Squad Matrix</span>
+            <span class="squad__name">Felipe Lara</span>
+            <span class="squad__name">Fernanda Dutra</span>
+            <span class="squad__name">Leandro Dias</span>
+            <span class="squad__name">Mariana Maia</span>
+            <span class="squad__name">Pedro Melo</span>
+            <span class="squad__name">Rafael Bentes</span>
+          </div>
+        </div>
+        <div class="mascot-stage" data-reveal style="--d:300">
+          <div class="orbit-tag orbit-tag--1"><span class="dot" style="background:var(--bulbe-verde)"></span> Energia
+            limpa</div>
+          <div class="orbit-tag orbit-tag--2"><span class="dot" style="background:var(--bulbe-amarelo)"></span> +
+            Transparência</div>
+          <img class="mascot" src="public/pre-fatura-bulbinho.png" alt="Bulbinho, mascote da Bulbe" />
+        </div>
+      </section>
+
+      <!-- ============ SLIDE 2 · PROBLEMA ============ -->
+      <section class="slide">
+        <span class="slide-num">02</span>
+        <div class="content-z">
+          <span class="eyebrow" data-reveal>O Contexto e a Dor do Negócio</span>
+          <h2 class="headline" data-reveal style="--d:80">O Gargalo dos <span class="accent-y">90 Dias</span></h2>
+          <div class="grid-2">
+            <div>
+              <div class="bignum" data-reveal style="--d:160">
+                <span data-count="90" data-suffix="">0</span><small> dias</small>
+              </div>
+              <p class="sub" data-reveal style="--d:220; margin-top:4px">
+                A homologação junto à CEMIG demora de <b style="color:#fff">3 a 4 meses</b> após a adesão do cliente.
+              </p>
+              <div class="timeline" data-reveal style="--d:300">
+                <div class="timeline__bar">
+                  <div class="timeline__fill" id="t2fill"></div>
+                </div>
+                <div class="timeline__pts">
+                  <div class="timeline__pt"><b class="accent">Dia 0</b><span>Adesão</span></div>
+                  <div class="timeline__pt"><b>Vácuo</b><span>Sem contato</span></div>
+                  <div class="timeline__pt"><b style="color:var(--bulbe-vermelho)">~120</b><span>1ª fatura</span></div>
+                </div>
+              </div>
+              <div class="quote" data-reveal style="--d:420">
+                <p>"Recebemos muitos relatos de clientes que não receberam a conta devido ao tempo de implementação que
+                  pode chegar a 4 meses."</p>
+                <cite>— Fernando · Gerente Comercial, Bulbe</cite>
+              </div>
+            </div>
+            <div class="pain-list">
+              <div class="pain" data-reveal style="--d:220">
+                <div class="pain__icon">⏳</div>
+                <div><b>Prazo crítico</b>
+                  <p>3 a 4 meses entre a adesão e a primeira fatura com desconto.</p>
+                </div>
+              </div>
+              <div class="pain" data-reveal style="--d:300">
+                <div class="pain__icon">📵</div>
+                <div><b>Vácuo de comunicação</b>
+                  <p>O cliente fica sem informações sobre o andamento do processo.</p>
+                </div>
+              </div>
+              <div class="pain" data-reveal style="--d:380">
+                <div class="pain__icon">😟</div>
+                <div><b>Impacto no comportamento</b>
+                  <p>A falta de contato gera ansiedade, desconfiança e esquecimento da contratação.</p>
+                </div>
+              </div>
+              <div class="pain" data-reveal style="--d:460">
+                <div class="pain__icon">📉</div>
+                <div><b>Consequência comercial</b>
+                  <p>Alta inadimplência na primeira fatura e cancelamentos precoces (churn).</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SLIDE 3 · HIPÓTESE ============ -->
+      <section class="slide">
+        <span class="slide-num">03</span>
+        <div class="content-z">
+          <span class="eyebrow" data-reveal>Hipótese e Justificativa Estratégica</span>
+          <h2 class="headline" data-reveal style="--d:80">Transformando <span class="accent">Espera</span> em <span
+              class="accent-y">Valor Percebido</span></h2>
+          <p class="sub" data-reveal style="--d:140">Se oferecermos acompanhamento em tempo real + simulações claras +
+            benefícios antes do faturamento, reduzimos a ansiedade e engajamos o cliente no app.</p>
+          <div class="hyp-flow">
+            <div class="hyp-card" data-reveal style="--d:220">
+              <div class="ico">📍</div><b>Acompanhamento</b><span>Status em tempo real da homologação</span>
+            </div>
+            <div class="hyp-plus" data-reveal style="--d:280">+</div>
+            <div class="hyp-card" data-reveal style="--d:320">
+              <div class="ico">🧮</div><b>Simulação</b><span>Economia clara antes da 1ª fatura</span>
+            </div>
+            <div class="hyp-plus" data-reveal style="--d:380">+</div>
+            <div class="hyp-card" data-reveal style="--d:420">
+              <div class="ico">🎁</div><b>Benefícios</b><span>Vantagens reais imediatas</span>
+            </div>
+            <div class="hyp-plus" data-reveal style="--d:480">→</div>
+            <div class="hyp-result" data-reveal style="--d:520">
+              <div class="ico">🚀</div><b>Engajamento</b><span>Menos ansiedade, mais confiança</span>
+            </div>
+          </div>
+          <div class="just-grid">
+            <div class="just" data-reveal style="--d:580"><span class="n">01 · NEGÓCIO</span>
+              <p>Proteção do faturamento recorrente da Bulbe.</p>
+            </div>
+            <div class="just" data-reveal style="--d:660"><span class="n">02 · OPERAÇÃO</span>
+              <p>Redução drástica do esforço e custo de atendimento manual.</p>
+            </div>
+            <div class="just" data-reveal style="--d:740"><span class="n">03 · RELAÇÃO</span>
+              <p>Confiança imediata com as Classes B, C e D.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SLIDE 4 · BENCHMARK ============ -->
+      <section class="slide">
+        <span class="slide-num">04</span>
+        <div class="content-z">
+          <span class="eyebrow" data-reveal>Análise de Mercado · Benchmark</span>
+          <h2 class="headline" data-reveal style="--d:80">Onde o Mercado Acerta e <span class="accent">Onde a Bulbe Pode
+              Evoluir</span></h2>
+          <div class="bench">
+            <div class="bench-row" data-reveal style="--d:180">
+              <div class="bench-co"><b>Clarke Energia</b><span>Organização da UI</span></div>
+              <div class="bench-bar">
+                <div class="bar-track">
+                  <div class="bar-fill bar-fill--good" style="--w:80%"></div>
+                </div>
+                <div class="bench-nota">4<small>/5</small></div>
+              </div>
+              <div class="bench-desc">Simulador de economia excelente e funcional, sem necessidade de login.</div>
+            </div>
+            <div class="bench-row" data-reveal style="--d:300">
+              <div class="bench-co"><b>Cemig SIM</b><span>Explicação de Etapas</span></div>
+              <div class="bench-bar">
+                <div class="bar-track">
+                  <div class="bar-fill bar-fill--mid" style="--w:60%"></div>
+                </div>
+                <div class="bench-nota">3<small>/5</small></div>
+              </div>
+              <div class="bench-desc">Possui "Jornada de adesão", mas com hierarquia visual poluída.</div>
+            </div>
+            <div class="bench-row bench-row--us" data-reveal style="--d:420">
+              <div class="bench-co"><b class="accent-y">Bulbe Atual</b><span>Navegação Entendida</span></div>
+              <div class="bench-bar">
+                <div class="bar-track">
+                  <div class="bar-fill bar-fill--low" style="--w:20%"></div>
+                </div>
+                <div class="bench-nota">1<small>/5</small></div>
+              </div>
+              <div>
+                <div class="bench-desc">Design moderno, mas falta interatividade e clareza sobre os processos.</div>
+                <div class="bench-opp">⚡ Nossa oportunidade</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SLIDE 5 · PERSONAS ============ -->
+      <section class="slide">
+        <span class="slide-num">05</span>
+        <div class="content-z">
+          <span class="eyebrow" data-reveal>Foco no Usuário</span>
+          <h2 class="headline" data-reveal style="--d:80">Quem São Nossos Usuários e <span class="accent">o Que Eles
+              Buscam?</span></h2>
+          <div class="personas">
+            <div class="persona" style="--pc:var(--bulbe-verde)" data-reveal style="--d:180">
+              <div class="persona__avatar">👩🏽</div>
+              <div class="persona__name">Maria Aparecida</div>
+              <div class="persona__role">47 anos · Aux. de Serviços Gerais</div>
+              <p class="persona__desc">Insegura com a falta de retorno e com termos excessivamente técnicos.</p>
+              <div class="persona__foco">🎯 Transparência no status</div>
+            </div>
+            <div class="persona" style="--pc:var(--bulbe-amarelo)" data-reveal style="--d:300">
+              <div class="persona__avatar">👨🏻</div>
+              <div class="persona__name">Paulo</div>
+              <div class="persona__role">25 anos · Telemarketing</div>
+              <p class="persona__desc">Usuário digital focado em economizar para o lazer. Quer praticidade.</p>
+              <div class="persona__foco">🎯 Ver a economia real, simples</div>
+            </div>
+            <div class="persona" style="--pc:#5b9bff" data-reveal style="--d:420">
+              <div class="persona__avatar">👩🏼‍💼</div>
+              <div class="persona__name">Helena</div>
+              <div class="persona__role">35 anos · Coordenadora T&D</div>
+              <p class="persona__desc">Classe B, analítica, busca dados concretos e descontos reais.</p>
+              <div class="persona__foco">🎯 Simulador interativo</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SLIDE 6 · SOLUÇÃO · ATRAÇÃO & SIMULAÇÃO ============ -->
+      <section class="slide">
+        <span class="slide-num">06</span>
+        <div class="content-z solution">
+          <div data-reveal style="--d:120">
+            <div class="phone">
+              <div class="phone-halo"></div>
+              <div class="phone__screen"><iframe data-src="src/resultado.html" title="Simulador de economia"
+                  scrolling="no"></iframe></div>
+            </div>
+          </div>
+          <div>
+            <span class="eyebrow" data-reveal-x style="--d:60">Solução de Interface · Atração</span>
+            <h2 class="headline" data-reveal-x style="--d:120">Transparência <span class="accent">Desde o Primeiro
+                Contato</span></h2>
+            <div class="feat-list">
+              <div class="feat" data-reveal-x style="--d:220">
+                <div class="feat__num">1</div>
+                <div><b>Onboarding didático</b>
+                  <p>Explicação visual em 3 passos de como o desconto é gerado e injetado na conta.</p>
+                </div>
+              </div>
+              <div class="feat" data-reveal-x style="--d:320">
+                <div class="feat__num">2</div>
+                <div><b>Simulador de economia interativo</b>
+                  <p>O usuário descobre a economia mensal e anual com um clique, quebrando a objeção de "bom demais para
+                    ser verdade".</p>
+                </div>
+              </div>
+              <div class="feat" data-reveal-x style="--d:420">
+                <div class="feat__num">3</div>
+                <div><b>Detalhamento amigável com o Bulbinho</b>
+                  <p>O mascote explica o que compõe o desconto, separando taxas de iluminação e impostos para alinhar
+                    expectativas.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SLIDE 7 · SOLUÇÃO · STATUS EM TEMPO REAL ============ -->
+      <section class="slide">
+        <span class="slide-num">07</span>
+        <div class="content-z solution">
+          <div data-reveal style="--d:120">
+            <div class="phone">
+              <div class="phone-halo"></div>
+              <div class="phone__screen"><iframe data-src="src/status-pedido.html"
+                  title="Status do pedido em tempo real" scrolling="no"></iframe></div>
+            </div>
+          </div>
+          <div>
+            <span class="eyebrow" data-reveal-x style="--d:60">Solução de Interface · O Fim da Ansiedade</span>
+            <h2 class="headline" data-reveal-x style="--d:120">Acompanhamento de Status <span class="accent">em Tempo
+                Real</span></h2>
+            <div class="feat-list">
+              <div class="feat" data-reveal-x style="--d:220">
+                <div class="feat__num">⏱</div>
+                <div><b>Linha do tempo visual</b>
+                  <p>Divisão clara do processo de homologação em 4 etapas numeradas e fáceis de entender.</p>
+                </div>
+              </div>
+              <div class="feat" data-reveal-x style="--d:320">
+                <div class="feat__num">📍</div>
+                <div><b>Status ativo</b>
+                  <p>O cliente sabe exatamente em qual mesa seu pedido está (Bulbe ou CEMIG), reduzindo a ansiedade e os
+                    chamados no suporte.</p>
+                </div>
+              </div>
+              <div class="feat" data-reveal-x style="--d:420">
+                <div class="feat__num">🎨</div>
+                <div><b>Diferenciação cromática</b>
+                  <p>Etapas concluídas e futuras em cores distintas — leitura fácil para qualquer nível de alfabetização
+                    digital.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SLIDE 8 · SOLUÇÃO · ENGAJAMENTO ============ -->
+      <section class="slide">
+        <span class="slide-num">08</span>
+        <div class="content-z solution">
+          <div data-reveal style="--d:120">
+            <div class="phone">
+              <div class="phone-halo"></div>
+              <div class="phone__screen"><iframe data-src="src/impulsione-fatura.html" title="Clube de benefícios Bulbe"
+                  scrolling="no"></iframe></div>
+            </div>
+          </div>
+          <div>
+            <span class="eyebrow" data-reveal-x style="--d:60">Solução de Interface · Engajamento Antecipado</span>
+            <h2 class="headline" data-reveal-x style="--d:120">Gerando Valor <span class="accent-y">Antes da Primeira
+                Fatura</span></h2>
+            <div class="feat-list">
+              <div class="feat" data-reveal-x style="--d:220">
+                <div class="feat__num">📊</div>
+                <div><b>Tela educativa pré-gráfico</b>
+                  <p>Em vez de erro ou tela em branco, o app avisa de forma amigável que os gráficos estão sendo
+                    preparados.</p>
+                </div>
+              </div>
+              <div class="feat" data-reveal-x style="--d:320">
+                <div class="feat__num">🎁</div>
+                <div><b>Clube de Benefícios Bulbe</b>
+                  <p>"Impulsione sua primeira fatura" libera parcerias com cashback e descontos (Inter, Livelo, Drogaria
+                    Araújo).</p>
+                </div>
+              </div>
+              <div class="feat" data-reveal-x style="--d:420">
+                <div class="feat__num">🔁</div>
+                <div><b>Gatilho de hábito</b>
+                  <p>Vantagens reais imediatas: o cliente se acostuma a abrir o app e se prepara para pagar a 1ª conta
+                    corretamente.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SLIDE 9 · ACESSIBILIDADE ============ -->
+      <section class="slide">
+        <span class="slide-num">09</span>
+        <div class="content-z">
+          <span class="eyebrow" data-reveal>Diferenciais de Acessibilidade Mobile</span>
+          <h2 class="headline" data-reveal style="--d:80">Design Inclusivo <span class="accent">para Todos os
+              Públicos</span></h2>
+          <p class="sub" data-reveal style="--d:140">Pensado para a Maria Aparecida e o Sr. José Aldo — usuários reais,
+            dispositivos de entrada.</p>
+          <div class="a11y">
+            <div class="a11y-card" data-reveal style="--d:240">
+              <div class="ico">🔆</div>
+              <h3>Contraste WCAG</h3>
+              <p>Cores institucionais aplicadas com alto contraste para garantir leitura nítida.</p>
+              <div class="a11y-demo contrast-demo">
+                <span style="background:var(--bulbe-azul);color:#fff">AA ✓</span>
+                <span style="background:var(--bulbe-verde);color:#04063f">AA ✓</span>
+                <span style="background:var(--bulbe-amarelo);color:#04063f">AA ✓</span>
+              </div>
+            </div>
+            <div class="a11y-card" data-reveal style="--d:360">
+              <div class="ico">💬</div>
+              <h3>Linguagem humanizada</h3>
+              <p>O mascote Bulbinho traduz conceitos regulatórios e fiscais complexos em diálogos simples.</p>
+              <div class="a11y-demo" style="display:flex;align-items:center;gap:12px;margin-top:18px">
+                <img src="public/pre-fatura-bulbinho.png" style="width:54px;height:54px" alt="Bulbinho" />
+                <span
+                  style="font-size:13px;background:rgba(255,255,255,.08);padding:10px 14px;border-radius:12px;border:1px solid var(--azul-vidro-borda)">"Tiramos
+                  os impostos e aplicamos até 15% de desconto 💡"</span>
+              </div>
+            </div>
+            <div class="a11y-card" data-reveal style="--d:480">
+              <div class="ico">👆</div>
+              <h3>Botões ampliados</h3>
+              <p>Elementos de clique grandes e full-width, fáceis de tocar em celulares Android de entrada.</p>
+              <div class="a11y-demo">
+                <div class="demo-btn">Quero economizar →</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SLIDE 10 · CONCLUSÃO / KPIs ============ -->
+      <section class="slide">
+        <span class="slide-num">10</span>
+        <div class="content-z">
+          <span class="eyebrow" data-reveal>Conclusão e Impacto nos KPIs</span>
+          <h2 class="headline" data-reveal style="--d:80">Resultados Esperados <span class="accent">para a Bulbe
+              Energia</span></h2>
+          <div class="kpis">
+            <div class="kpi kpi--down" data-reveal style="--d:200">
+              <div class="kpi__tag">📉</div>
+              <h3><span class="arrow-down">Redução</span> da Inadimplência</h3>
+              <p>O acompanhamento transparente elimina a desconfiança no recebimento da primeira conta.</p>
+            </div>
+            <div class="kpi kpi--down" data-reveal style="--d:320">
+              <div class="kpi__tag">📉</div>
+              <h3><span class="arrow-down">Queda</span> no Churn Precoce</h3>
+              <p>O Clube de Benefícios retém o cliente engajado durante os 90 dias de espera da distribuidora.</p>
+            </div>
+            <div class="kpi kpi--up" data-reveal style="--d:440">
+              <div class="kpi__tag">📈</div>
+              <h3><span class="arrow-up">Aumento</span> em NPS e Engajamento</h3>
+              <p>Transforma uma experiência frustrante em um ecossistema digital transparente, simples e focado no
+                usuário.</p>
+            </div>
+          </div>
+          <div class="closing" data-reveal style="--d:560">
+            <img class="mini-mascot" src="public/pre-fatura-bulbinho.png" alt="Bulbinho" />
+            <div class="closing__txt">
+              <b>Obrigado! 💚</b>
+              <span>Squad Matrix — Ibmec 2026.1 · Felipe · Fernanda · Leandro · Mariana · Pedro · Rafael</span>
+            </div>
+            <img class="logo" src="public/logo.png" alt="Bulbe Energia" />
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <!-- Navegação -->
+  <div class="dots" id="dots"></div>
+  <div class="hint">Use <kbd>←</kbd> <kbd>→</kbd> ou <kbd>espaço</kbd> para navegar</div>
+  <div class="nav">
+    <button class="nav__btn" id="prev" aria-label="Anterior">‹</button>
+    <span class="nav__count"><b id="cur">1</b> / <span id="total">10</span></span>
+    <button class="nav__btn" id="next" aria-label="Próximo">›</button>
+  </div>
+
+  <script>
+    const track = document.getElementById('track');
+    const slides = Array.from(track.children);
+    const total = slides.length;
+    let current = 0;
+
+    const isMobile = () => window.innerWidth <= 768;
+
+    // Dots
+    const dotsWrap = document.getElementById('dots');
+    slides.forEach((_, i) => {
+      const d = document.createElement('div');
+      d.className = 'dot';
+      d.addEventListener('click', () => go(i));
+      dotsWrap.appendChild(d);
+    });
+    const dots = Array.from(dotsWrap.children);
+    document.getElementById('total').textContent = total;
+
+    function go(i) {
+      current = Math.max(0, Math.min(total - 1, i));
+
+      if (isMobile()) {
+        // Mobile: scroll suave até o slide alvo
+        slides[current].scrollIntoView({ behavior: 'smooth', block: 'start' });
+      } else {
+        // Desktop: carrossel horizontal
+        track.style.transform = `translateX(-${current * 100}vw)`;
+      }
+
+      slides.forEach((s, idx) => s.classList.toggle('is-active', idx === current));
+      dots.forEach((d, idx) => d.classList.toggle('is-active', idx === current));
+      document.getElementById('cur').textContent = current + 1;
+      document.getElementById('progress').style.width = `${((current + 1) / total) * 100}%`;
+      document.body.classList.toggle('on-cover', current === 0);
+      activate(slides[current]);
+    }
+
+    // Ativa animações dependentes (contadores, barras, iframes) ao entrar no slide
+    function activate(slide) {
+      slide.querySelectorAll('[data-count]').forEach(el => {
+        const target = +el.dataset.count;
+        const suffix = el.dataset.suffix || '';
+        let start = null;
+        const dur = 1400;
+        function step(ts) {
+          if (!start) start = ts;
+          const p = Math.min((ts - start) / dur, 1);
+          const eased = 1 - Math.pow(1 - p, 3);
+          el.textContent = Math.round(eased * target) + suffix;
+          if (p < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      });
+      slide.querySelectorAll('.bar-fill, .timeline__fill').forEach(b => {
+        b.classList.remove('run');
+        void b.offsetWidth;
+        setTimeout(() => b.classList.add('run'), 200);
+      });
+      slide.querySelectorAll('iframe[data-src]').forEach(f => {
+        if (!f.src) f.src = f.dataset.src;
+      });
+    }
+
+    // No mobile, detecta qual slide está visível via IntersectionObserver
+    const observer = new IntersectionObserver(entries => {
+      if (!isMobile()) return;
+      entries.forEach(entry => {
+        if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
+          const idx = slides.indexOf(entry.target);
+          if (idx !== -1 && idx !== current) {
+            current = idx;
+            slides.forEach((s, i) => s.classList.toggle('is-active', i === current));
+            dots.forEach((d, i) => d.classList.toggle('is-active', i === current));
+            document.getElementById('cur').textContent = current + 1;
+            document.body.classList.toggle('on-cover', current === 0);
+            activate(slides[current]);
+          }
+        }
+      });
+    }, { threshold: 0.5 });
+    slides.forEach(s => observer.observe(s));
+
+    document.getElementById('next').addEventListener('click', () => go(current + 1));
+    document.getElementById('prev').addEventListener('click', () => go(current - 1));
+    document.addEventListener('keydown', e => {
+      if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') { e.preventDefault(); go(current + 1); }
+      else if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); go(current - 1); }
+      else if (e.key === 'Home') go(0);
+      else if (e.key === 'End') go(total - 1);
+      else if (e.key === 'f') { document.documentElement.requestFullscreen?.(); }
+    });
+
+    // Swipe horizontal — desktop/tablet
+    let tx = 0, ty = 0;
+    track.addEventListener('touchstart', e => {
+      tx = e.touches[0].clientX;
+      ty = e.touches[0].clientY;
+    }, { passive: true });
+    track.addEventListener('touchend', e => {
+      if (isMobile()) return; // mobile usa scroll nativo
+      const dx = e.changedTouches[0].clientX - tx;
+      const dy = e.changedTouches[0].clientY - ty;
+      if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 60) go(current + (dx < 0 ? 1 : -1));
+    }, { passive: true });
+
+    // Reajusta transform ao redimensionar (desktop ↔ tablet)
+    window.addEventListener('resize', () => {
+      if (!isMobile()) {
+        track.style.transform = `translateX(-${current * 100}vw)`;
+      } else {
+        track.style.transform = '';
+      }
+    });
+
+    go(0);
+  </script>
+</body>
+
+</html>
