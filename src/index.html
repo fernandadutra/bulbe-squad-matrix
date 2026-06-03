@@ -19,41 +19,45 @@
 
     <bulbe-banner></bulbe-banner>
 
-    <bulbe-sheet>
+    <bulbe-sheet style="padding-bottom: 230px;">
       <h1 class="titulo-como-funciona">Como funciona</h1>
 
       <div class="passos">
-        <img
-          src="../public/como-funciona-1.png"
+        <img src="../public/como-funciona-1.png"
           alt="Passo 01: Energia solar que gera economia — nossas fazendas solares produzem energia limpa e renovável."
-          class="passo__imagem"
-        />
+          class="passo__imagem" />
 
         <div class="seta-separador" aria-hidden="true">
           <img src="../public/seta-baixo.png" alt="" class="seta-separador__icone" />
         </div>
 
-        <img
-          src="../public/como-funciona-2.png"
+        <img src="../public/como-funciona-2.png"
           alt="Passo 02: Energia que chega até você — essa energia solar é enviada para a rede de distribuição da CEMIG."
-          class="passo__imagem"
-        />
+          class="passo__imagem" />
 
         <div class="seta-separador" aria-hidden="true">
           <img src="../public/seta-baixo.png" alt="" class="seta-separador__icone" />
         </div>
 
-        <img
-          src="../public/como-funciona-3.png"
+        <img src="../public/como-funciona-3.png"
           alt="Passo 03: Créditos que viram desconto na sua conta de luz — chega em forma de créditos de energia que se transformam em desconto."
-          class="passo__imagem"
-        />
+          class="passo__imagem" />
       </div>
     </bulbe-sheet>
 
-    <a href="simular-desconto.html" class="btn-quero-economizar">
-      Quero economizar <span aria-hidden="true">→</span>
-    </a>
+    <div class="cta-stack">
+      <a href="simular-desconto-nao-logado.html" class="btn-quero-economizar">
+        Quero economizar <span aria-hidden="true">→</span>
+      </a>
+      <div class="cta-divisor">ou</div>
+      <a href="status-pedido.html" class="btn-entrar" id="btn-entrar">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+          <circle cx="10" cy="7" r="3.5" stroke="#08068d" stroke-width="1.5" />
+          <path d="M3 17c0-3.314 3.134-6 7-6s7 2.686 7 6" stroke="#08068d" stroke-width="1.5" stroke-linecap="round" />
+        </svg>
+        <span>Já possui conta? <span class="btn-entrar__accent">Entre aqui</span></span>
+      </a>
+    </div>
   </div>
 
   <script src="components.js"></script>

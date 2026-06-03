@@ -78,10 +78,41 @@
         value="630,00"
         data-result="annualSavings"
       ></bulbe-metric-card>
+      <div id="resultado-detalhamento" class="resultado-detalhamento" style="display:none;">
+        <p class="resultado-detalhamento__titulo">Detalhamento da simulação</p>
+        <div class="sim-detalhe__linhas">
+          <div class="sim-detalhe__linha">
+            <div class="sim-detalhe__linha-esq">
+              <span class="sim-detalhe__fonte">CEMIG</span>
+              <span class="sim-detalhe__kwh">50 kWh</span>
+            </div>
+            <span class="sim-detalhe__preco">R$ 51,18</span>
+          </div>
+          <div class="sim-detalhe__linha">
+            <div class="sim-detalhe__linha-esq">
+              <span class="sim-detalhe__fonte">Bulbe Energia</span>
+              <span class="sim-detalhe__kwh">199 kWh</span>
+            </div>
+            <div class="sim-detalhe__preco-duplo">
+              <span class="sim-detalhe__preco-riscado">R$ 199,13</span>
+              <span class="sim-detalhe__preco-novo">R$ 169,26</span>
+            </div>
+          </div>
+          <hr class="sim-detalhe__divisor" />
+          <div class="sim-detalhe__linha sim-detalhe__linha--subtotal">
+            <div class="sim-detalhe__linha-esq">
+              <span class="sim-detalhe__fonte">Subtotal 1</span>
+              <span class="sim-detalhe__kwh">249 kWh</span>
+            </div>
+            <span class="sim-detalhe__preco">R$ 220,44</span>
+          </div>
+        </div>
+      </div>
+
       <div class="footer-result__container">
-        <button type="button" class="btn btn--success" id="ctaStart">
+        <a href="adesao.html" class="btn btn--success" id="ctaStart" onclick="alert('Funcionalidade em desenvolvimento!'); return false;">
           Comece agora <span aria-hidden="true">→</span>
-        </button>
+        </a>
         <a href="simular-desconto.html" class="btn btn--ghost">
           <span aria-hidden="true" class="txt--ghost">←</span> Simular novamente
         </a>
