@@ -72,10 +72,24 @@
       if (key in map) el.textContent = formatBRL(map[key]);
     });
 
-    const cta = document.getElementById('ctaStart');
-    if (cta) {
-      cta.addEventListener('click', () => {
-        alert('Vamos te direcionar para iniciar sua adesão à Bulbe.');
+    const isLogado = sessionStorage.getItem('bulbe.logado') === '1';
+    const detalhamento = document.getElementById('resultado-detalhamento');
+    const ctaStart = document.getElementById('ctaStart');
+    if (detalhamento) detalhamento.style.display = isLogado ? 'block' : 'none';
+    if (ctaStart) ctaStart.style.display = isLogado ? 'none' : '';
+  }
+
+  function setupFlowRouting() {
+    const btnEntrar = document.getElementById('btn-entrar');
+    if (btnEntrar) {
+      btnEntrar.addEventListener('click', () => {
+        sessionStorage.setItem('bulbe.logado', '1');
+      });
+    }
+    const btnNovo = document.querySelector('.btn-quero-economizar');
+    if (btnNovo) {
+      btnNovo.addEventListener('click', () => {
+        sessionStorage.removeItem('bulbe.logado');
       });
     }
   }
@@ -83,5 +97,55 @@
   document.addEventListener('DOMContentLoaded', () => {
     setupEntryForm();
     setupResultScreen();
+    setupFlowRouting();
   });
+})();
+
+// ─── Oculta detalhamento para novos usuários (?novo=1) ───
+if (new URLSearchParams(location.search).get('novo') === '1') {
+  const hideDetalhe = () => {
+    const d = document.querySelector('.sim-detalhe');
+    if (d) d.classList.add('sim-detalhe--oculto');
+  };
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', hideDetalhe);
+  } else {
+    hideDetalhe();
+  }
+}
+
+// ─── Detalhamento das simulações (accordion) ───
+;(function () {
+  function initAccordion() {
+    const items = document.querySelectorAll('.sim-detalhe__item');
+    if (!items.length) return;
+
+    items.forEach((item) => {
+      const btn = item.querySelector('.sim-detalhe__header');
+      if (!btn) return;
+
+      btn.addEventListener('click', () => {
+        const isOpen = item.classList.contains('is-open');
+
+        // Fecha todos
+        items.forEach((i) => {
+          i.classList.remove('is-open');
+          const h = i.querySelector('.sim-detalhe__header');
+          if (h) h.setAttribute('aria-expanded', 'false');
+        });
+
+        // Abre o clicado (toggle: se já estava aberto, fica fechado)
+        if (!isOpen) {
+          item.classList.add('is-open');
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initAccordion);
+  } else {
+    initAccordion();
+  }
 })();
