@@ -42,19 +42,32 @@
   --bulbe-fatura-card-borda: #E6F1FE;
 
   /* Tokens oficiais do Figma (telas do app logado: Faturas / Consumo) */
-  --bulbe-au700: #08068D;   /* Azul Universo 700 — primário do app */
-  --bulbe-ac600: #0762C7;   /* Azul Céu 600 */
-  --bulbe-ac700: #054894;   /* Azul Céu 700 — texto pílula "em aberto" */
-  --bulbe-ac50: #E6F1FE;    /* Azul Céu 50 — fundo pílula/borda card */
-  --bulbe-vf500: #26D07C;   /* Verde Flora 500 */
-  --bulbe-vf700: #18814D;   /* Verde Flora 700 — texto pílula "paga" */
-  --bulbe-vf50: #E9FBF2;    /* Verde Flora 50 — fundo pílula "paga" */
-  --bulbe-as500: #FF9E1B;   /* Amarelo Sol 500 — linha de média */
-  --bulbe-c700: #3E4D5B;    /* Cinza C700 — mês/valor */
-  --bulbe-c600: #536679;    /* Cinza C600 — títulos de seção */
-  --bulbe-c200: #C2CCD6;    /* Cinza C200 — aba inativa */
-  --bulbe-c100: #D1D9E0;    /* Cinza C100 — divisores */
-  --bulbe-c300: #A4B3C1;    /* Cinza C300 — aba Economia inativa */
+  --bulbe-au700: #08068D;
+  /* Azul Universo 700 — primário do app */
+  --bulbe-ac600: #0762C7;
+  /* Azul Céu 600 */
+  --bulbe-ac700: #054894;
+  /* Azul Céu 700 — texto pílula "em aberto" */
+  --bulbe-ac50: #E6F1FE;
+  /* Azul Céu 50 — fundo pílula/borda card */
+  --bulbe-vf500: #26D07C;
+  /* Verde Flora 500 */
+  --bulbe-vf700: #18814D;
+  /* Verde Flora 700 — texto pílula "paga" */
+  --bulbe-vf50: #E9FBF2;
+  /* Verde Flora 50 — fundo pílula "paga" */
+  --bulbe-as500: #FF9E1B;
+  /* Amarelo Sol 500 — linha de média */
+  --bulbe-c700: #3E4D5B;
+  /* Cinza C700 — mês/valor */
+  --bulbe-c600: #536679;
+  /* Cinza C600 — títulos de seção */
+  --bulbe-c200: #C2CCD6;
+  /* Cinza C200 — aba inativa */
+  --bulbe-c100: #D1D9E0;
+  /* Cinza C100 — divisores */
+  --bulbe-c300: #A4B3C1;
+  /* Cinza C300 — aba Economia inativa */
   --bulbe-dot-inativo: #D0D5DD;
   --bulbe-verde-banner: #058036;
 }
@@ -1234,6 +1247,170 @@ bulbe-metric-card {
   margin: 0 auto;
 }
 
+/* ---------- TELA BENEFÍCIOS ---------- */
+.sheet--beneficios {
+  padding-top: 22px;
+  gap: 20px;
+}
+
+.beneficios__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.beneficios__titulo {
+  margin: 0;
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--bulbe-azul);
+  line-height: 1.35;
+}
+
+.beneficios__verde {
+  color: var(--bulbe-verde);
+}
+
+.beneficios__info-btn {
+  background: transparent;
+  border: 0;
+  padding: 2px;
+  cursor: pointer;
+  flex-shrink: 0;
+  margin-top: 4px;
+  line-height: 0;
+}
+
+.beneficios__subtitulo {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 600;
+  color: #626266;
+  line-height: 1.5;
+}
+
+.beneficios__cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
+}
+
+.beneficio-card {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px;
+  border-radius: 10px;
+  min-height: 70px;
+}
+
+.beneficio-card--connect {
+  background: #edfdf4;
+  border: 1px solid #b9f8cf;
+}
+
+.beneficio-card--movement {
+  background: linear-gradient(to right, #eff6ff, #eef2ff);
+  border: 1px solid #bedbff;
+}
+
+.beneficio-card--experience {
+  background: #fff4e6;
+  border: 1px solid rgba(255, 158, 27, 0.26);
+}
+
+.beneficio-card__icone-wrap {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.beneficio-card__icone-wrap--verde {
+  background: #26d07c;
+}
+
+.beneficio-card__icone-wrap--laranja {
+  background: #ff9e1b;
+}
+
+.beneficio-card__icone {
+  width: 20px;
+  height: 16px;
+  object-fit: contain;
+}
+
+.beneficio-card__icone--full {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.beneficio-card__corpo {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.beneficio-card__linha-topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 20px;
+}
+
+.beneficio-card__nome {
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.6;
+}
+
+.beneficio-card__nome--verde {
+  color: #18814d;
+}
+
+.beneficio-card__nome--azul {
+  color: #0762c7;
+}
+
+.beneficio-card__nome--laranja {
+  color: #ff9e1b;
+}
+
+.beneficio-card__cadeado {
+  width: 11px;
+  height: 13px;
+  object-fit: contain;
+}
+
+.beneficio-card__desc {
+  margin: 0;
+  font-size: 7px;
+  color: #a4b3c1;
+  line-height: 1.4;
+}
+
+.beneficio-card__parceiros {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: flex-end;
+}
+
+.beneficio-card__parceiro {
+  height: 11px;
+  width: 44px;
+  object-fit: contain;
+}
+
 /* Telas Pequenas */
 @media (max-width: 360px) {
   .title {
@@ -1664,13 +1841,26 @@ bulbe-metric-card {
   line-height: 1.5;
 }
 
-.status-tooltip-card__prazo svg { flex-shrink: 0; margin-top: 2px; }
-.status-tooltip-card__prazo strong { color: #0A1080; }
+.status-tooltip-card__prazo svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.status-tooltip-card__prazo strong {
+  color: #0A1080;
+}
 
 /* Animações */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translate(-50%, -48%); }
-  to   { opacity: 1; transform: translate(-50%, -50%); }
+  from {
+    opacity: 0;
+    transform: translate(-50%, -48%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
 }
 
 @keyframes slideInRight {
@@ -1748,7 +1938,7 @@ bulbe-metric-card {
   height: 32px;
   border-radius: 50%;
   border: 2px solid #fff;
-  background: rgba(255,255,255,0.15);
+  background: rgba(255, 255, 255, 0.15);
 }
 
 /* Barra de Instalação */
@@ -2131,7 +2321,8 @@ bulbe-instalacao {
   align-items: flex-end;
   justify-content: space-between;
   gap: 4px;
-  height: 280px;  /* extra 40px para os labels de valor no topo */
+  height: 280px;
+  /* extra 40px para os labels de valor no topo */
   position: relative;
   padding-bottom: 0;
   margin-bottom: 16px;

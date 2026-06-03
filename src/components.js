@@ -112,6 +112,9 @@ class BulbeSheet extends HTMLElement {
     if (tipo === 'placeholder') {
       this.classList.add('sheet--placeholder');
     }
+    if (tipo === 'beneficios') {
+      this.classList.add('sheet--beneficios');
+    }
   }
 }
 customElements.define('bulbe-sheet', BulbeSheet);
@@ -243,9 +246,9 @@ const imageUrl = location.pathname.includes('status-pedido')
   ? '../public/Camada Bulbinho2.png'
   : '../public/Camada Bulbinho.png';
 
-if (tooltipImg) tooltipImg.addEventListener('click', function(event) {
+if (tooltipImg) tooltipImg.addEventListener('click', function (event) {
   event.stopPropagation();
-  
+
   if (!blurOverlay) {
     // Cria o overlay de blur
     blurOverlay = document.createElement('div');
@@ -261,7 +264,7 @@ if (tooltipImg) tooltipImg.addEventListener('click', function(event) {
 });
 
 // Clique em QUALQUER LUGAR = DESATIVA blur e remove imagem
-document.addEventListener('click', function() {
+document.addEventListener('click', function () {
   if (blurOverlay) {
     blurOverlay.remove();
     blurOverlay = null;
@@ -273,11 +276,11 @@ document.addEventListener('click', function() {
 });
 
 // Opcional: fechar ao pressionar ESC
-document.addEventListener('keydown', function(event) {
+document.addEventListener('keydown', function (event) {
   if (event.key === 'Escape' && blurOverlay) {
     blurOverlay.remove();
     blurOverlay = null;
-    
+
     if (modalImage) {
       modalImage.remove();
       modalImage = null;
