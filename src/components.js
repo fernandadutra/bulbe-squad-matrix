@@ -4,20 +4,52 @@
  */
 
 // 1. Componente de Cabeçalho (<bulbe-header>)
+// Use o atributo variant="app" para o cabeçalho do app logado (sino + avatar).
 class BulbeHeader extends HTMLElement {
   connectedCallback() {
-    this.innerHTML = `
-      <header class="topbar">
+    const variante = this.getAttribute('variant'); // 'app' ou nulo
+
+    const menu = `
         <button class="icon-btn topbar__menu" aria-label="Abrir menu">
           <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
           </svg>
-        </button>
+        </button>`;
+
+    const logo = `
         <a href="index.html" class="topbar__logo" aria-label="Bulbe — Início">
           <img src="../public/logo.png" alt="Bulbe Logo" style="height: 32px;" />
-        </a>
+        </a>`;
+
+    // Ações do app logado: sino de notificação (com bolinha de não-lido) + avatar.
+    const acoesApp = `
+        <div class="topbar__acoes">
+          <button class="icon-btn topbar__sino" aria-label="Notificações" type="button">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M18 8a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M13.7 21a2 2 0 0 1-3.4 0" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span class="topbar__sino-badge" aria-hidden="true"></span>
+          </button>
+          <span class="topbar__avatar" aria-hidden="true"></span>
+        </div>`;
+
+    if (variante === 'app') {
+      this.innerHTML = `
+      <header class="topbar topbar--app">
+        ${menu}
+        ${logo}
+        ${acoesApp}
       </header>
     `;
+    } else {
+      this.innerHTML = `
+      <header class="topbar">
+        ${menu}
+        ${logo}
+      </header>
+    `;
+    }
   }
 }
 customElements.define('bulbe-header', BulbeHeader);
@@ -33,6 +65,26 @@ class BulbeBanner extends HTMLElement {
   }
 }
 customElements.define('bulbe-banner', BulbeBanner);
+
+// 2b. Componente de Barra de Instalação (<bulbe-instalacao>)
+// Barra "Instalação: 0000000000 ▾" exibida sobre o fundo azul nas telas do app logado.
+class BulbeInstalacao extends HTMLElement {
+  connectedCallback() {
+    const valor = (this.getAttribute('valor') || '3013588579').replace(/[^0-9]/g, '');
+    this.innerHTML = `
+      <div class="barra-instalacao">
+        <span class="barra-instalacao__label">Instalação:</span>
+        <button class="barra-instalacao__seletor" type="button" aria-label="Selecionar instalação">
+          <span class="barra-instalacao__valor">${valor}</span>
+          <svg class="barra-instalacao__caret" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M6 9l6 6 6-6z"/>
+          </svg>
+        </button>
+      </div>
+    `;
+  }
+}
+customElements.define('bulbe-instalacao', BulbeInstalacao);
 
 // 3. Componente de Folha (Área de Conteúdo Principal) (<bulbe-sheet>)
 class BulbeSheet extends HTMLElement {
@@ -50,6 +102,15 @@ class BulbeSheet extends HTMLElement {
     }
     if (tipo === 'pre-fatura') {
       this.classList.add('sheet--pre-fatura');
+    }
+    if (tipo === 'faturas') {
+      this.classList.add('sheet--faturas');
+    }
+    if (tipo === 'consumo-app') {
+      this.classList.add('sheet--consumo-app');
+    }
+    if (tipo === 'placeholder') {
+      this.classList.add('sheet--placeholder');
     }
   }
 }
@@ -69,13 +130,13 @@ class BulbeFooter extends HTMLElement {
           </svg>
           <span>Faturas</span>
         </a>
-        <a href="simular-desconto.html" class="tab ${activeTab === 'consumo' ? 'is-active' : ''}" ${activeTab === 'consumo' ? 'aria-current="page"' : ''}>
+        <a href="faturas.html" class="tab ${activeTab === 'consumo' ? 'is-active' : ''}" ${activeTab === 'consumo' ? 'aria-current="page"' : ''}>
           <svg class="tab__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
             <path d="M13.5 2L5 13h6l-1.5 9L19 11h-6l.5-9z"/>
           </svg>
           <span>Consumo</span>
         </a>
-        <a href="#" class="tab ${activeTab === 'indicacoes' ? 'is-active' : ''}" ${activeTab === 'indicacoes' ? 'aria-current="page"' : ''}>
+        <a href="indique-ganhe.html" class="tab ${activeTab === 'indicacoes' ? 'is-active' : ''}" ${activeTab === 'indicacoes' ? 'aria-current="page"' : ''}>
           <svg class="tab__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <circle cx="9" cy="8" r="3.2" stroke="currentColor" stroke-width="1.7"/>
             <path d="M3.5 19c.7-3 3-4.5 5.5-4.5s4.8 1.5 5.5 4.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
@@ -178,11 +239,11 @@ const tooltipImg = document.querySelector('img[src="../public/tooltip.png"]');
 let blurOverlay = null;
 let modalImage = null;
 
-// URL da imagem que será exibida
-const imageUrl = '../public/Camada Bulbinho.png';
+const imageUrl = location.pathname.includes('status-pedido')
+  ? '../public/Camada Bulbinho2.png'
+  : '../public/Camada Bulbinho.png';
 
-// Clique no ícone = ATIVA blur + mostra imagem
-tooltipImg.addEventListener('click', function(event) {
+if (tooltipImg) tooltipImg.addEventListener('click', function(event) {
   event.stopPropagation();
   
   if (!blurOverlay) {
