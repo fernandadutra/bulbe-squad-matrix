@@ -370,9 +370,9 @@
 [Esta funcionalidade permite que novos usuários (visitantes do site) realizem uma simulação rápida de potencial de economia financeira na conta de luz antes de estarem autenticados no sistema. O usuário interage inserindo o valor bruto em reais da sua última conta de energia e clicando no botão de simulação para gerar um comparativo visual e estimativas de ganho anual.]
 
 **Comportamento esperado:**
-1. [Passo 1 do fluxo principal]
-2. [Passo 2]
-3. [Resultado final para o usuário]
+1. [O usuário acessa a página inicial do site e localiza o card do simulador com o campo "Valor de sua fatura atual".]
+2. [O usuário insere um valor numérico válido e clica no botão "Simular".]
+3. [O sistema processa o cálculo e renderiza dinamicamente a tela de resultados, exibindo de forma destacada a economia mensal estimada em verde, um bloco comparativo em vermelho (Sem desconto) e azul (Com Bulbe), e o valor da economia anual acumulada.]
 
 **Restrições e regras de negócio:**
 - [Regra 1: ex. "O prazo de espera exibido não pode ser inferior a 0 dias."]
