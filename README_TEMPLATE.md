@@ -356,10 +356,11 @@
 
 | ID | Funcionalidade | US Relacionada | MoSCoW | Sprint |
 |---|---|---|---|---|
-| F-01 | [Nome da funcionalidade] | US-01 | Must Have | Sprint 1 |
-| F-02 | [Nome da funcionalidade] | US-02 | Should Have | Sprint 2 |
-| F-03 | [Nome da funcionalidade] | US-03 | Could Have | Sprint 3 |
-| F-04 | [Nome da funcionalidade] | US-04 | Won't Have | — |
+| F-01 | [Simulador de Economia (Área Não Logada)] | US-01 | Must Have | Sprint 1 |
+| F-02 | [Simulador de Economia Completo (Área Logada) e Histórico] | US-02 | Must Have | Sprint 1 |
+| F-03 | [Visualização de Benefícios de Parceiros e Pré-Fatura] | US-03 | Should Have | Sprint 2 |
+| F-04 | [Gráficos de Consumo e Feedback Visual (Pré-Gráfico)] | US-04 | Could Have | Sprint 3 |
+| F-05 | [Acompanhamento do Status de Pedido (Integração Cemig)] | US-04 | Must Have | Sprint 2 |
 
 ### 5.2 Descrição das Funcionalidades Must Have
 
