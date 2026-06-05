@@ -364,10 +364,10 @@
 
 ### 5.2 Descrição das Funcionalidades Must Have
 
-#### F-01 · [Nome da Funcionalidade]
+#### F-01 · [Simulador de Economia (Área Não Logada)]
 
 **Descrição:**  
-[Descrição técnica e funcional. O que a funcionalidade faz? Como o usuário interage com ela?]
+[Esta funcionalidade permite que novos usuários (visitantes do site) realizem uma simulação rápida de potencial de economia financeira na conta de luz antes de estarem autenticados no sistema. O usuário interage inserindo o valor bruto em reais da sua última conta de energia e clicando no botão de simulação para gerar um comparativo visual e estimativas de ganho anual.]
 
 **Comportamento esperado:**
 1. [Passo 1 do fluxo principal]
