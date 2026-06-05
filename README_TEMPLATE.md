@@ -375,8 +375,9 @@
 3. [O sistema processa o cálculo e renderiza dinamicamente a tela de resultados, exibindo de forma destacada a economia mensal estimada em verde, um bloco comparativo em vermelho (Sem desconto) e azul (Com Bulbe), e o valor da economia anual acumulada.]
 
 **Restrições e regras de negócio:**
-- [Regra 1: ex. "O prazo de espera exibido não pode ser inferior a 0 dias."]
-- [Regra 2]
+- [Regra 1: O botão de simulação deve permanecer desabilitado se o campo de input estiver vazio ou preenchido com valor igual a $R\$\ 0,00$.]
+- [Regra 2 : O cálculo do desconto simulado deve ser aplicado exclusivamente sobre a estimativa de consumo de energia da concessionária (Cemig), deduzindo previamente do cálculo os valores médios de impostos (PIS/COFINS) e a taxa de iluminação pública.]
+- [Regra 3 : O redirecionamento através do botão "Começar agora" deve carregar o fluxo de cadastro retendo o valor simulado pelo usuário para não exigir redigitação no onboarding.]
 
 ---
 
