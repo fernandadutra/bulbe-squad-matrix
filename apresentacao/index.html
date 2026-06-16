@@ -1,0 +1,1364 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bulbe Energia — Squad Matrix · Apresentação</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* ==========================================================================
+         APRESENTAÇÃO SQUAD MATRIX — IDENTIDADE VISUAL BULBE ENERGIA ORIGINAL
+         ========================================================================== */
+      :root {
+        --bulbe-azul: #0a1080;
+        --bulbe-azul-profundo: #060b6e;
+        --bulbe-azul-noite: #04063f;
+        --bulbe-azul-suave: #1b25a8;
+        --bulbe-verde: #1fcd68;
+        --bulbe-verde-forte: #16a356;
+        --bulbe-amarelo: #ffd400;
+        --bulbe-laranja: #ff9e1b;
+        --bulbe-vermelho: #f60505;
+        --branco: #ffffff;
+        --azul-vidro: rgba(255, 255, 255, 0.05);
+        --azul-vidro-borda: rgba(255, 255, 255, 0.1);
+        --texto-suave: rgba(255, 255, 255, 0.75);
+        --texto-fraco: rgba(255, 255, 255, 0.45);
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html,
+      body {
+        height: 100%;
+        font-family:
+          "Poppins",
+          system-ui,
+          -apple-system,
+          sans-serif;
+        background: var(--bulbe-azul-noite);
+        color: #fff;
+        overflow: hidden;
+        -webkit-font-smoothing: antialiased;
+      }
+      .deck-bg {
+        position: fixed;
+        inset: 0;
+        z-index: 0;
+        background:
+          radial-gradient(
+            1200px 800px at 80% -10%,
+            rgba(31, 205, 104, 0.15),
+            transparent 60%
+          ),
+          radial-gradient(
+            900px 700px at -5% 100%,
+            rgba(27, 37, 168, 0.45),
+            transparent 55%
+          ),
+          linear-gradient(160deg, #0a1080 0%, #060b6e 50%, #04063f 100%);
+      }
+      .deck-bg::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        opacity: 0.3;
+        background-image:
+          linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        background-size: 54px 54px;
+        mask-image: radial-gradient(
+          circle at 50% 40%,
+          #000 30%,
+          transparent 85%
+        );
+      }
+      .deck {
+        position: relative;
+        z-index: 1;
+        height: 100vh;
+        width: 100vw;
+        overflow: hidden;
+      }
+      .track {
+        display: flex;
+        height: 100%;
+        transition: transform 0.6s cubic-bezier(0.65, 0.05, 0.2, 1);
+      }
+      .slide {
+        flex: 0 0 100vw;
+        height: 100vh;
+        padding: 84px 64px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+      }
+
+      .brandbar {
+        position: fixed;
+        top: 22px;
+        left: 64px;
+        right: 64px;
+        z-index: 30;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        pointer-events: none;
+      }
+      .brandbar img {
+        height: 26px;
+      }
+      .brandbar .squad-chip {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--bulbe-verde);
+        border: 1px solid rgba(31, 205, 104, 0.3);
+        padding: 5px 12px;
+        border-radius: 999px;
+        background: rgba(31, 205, 104, 0.06);
+      }
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--bulbe-verde);
+        margin-bottom: 8px;
+      }
+      .eyebrow::before {
+        content: "";
+        width: 24px;
+        height: 2px;
+        background: var(--bulbe-verde);
+      }
+      .slide-num {
+        position: absolute;
+        top: 45%;
+        right: 30px;
+        transform: translateY(-50%);
+        font-size: 160px;
+        font-weight: 900;
+        color: rgba(255, 255, 255, 0.015);
+        line-height: 1;
+        pointer-events: none;
+        z-index: 0;
+      }
+      h2.headline {
+        font-size: clamp(26px, 3.4vw, 44px);
+        font-weight: 800;
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+        margin-bottom: 8px;
+      }
+      .accent {
+        color: var(--bulbe-verde);
+      }
+      .accent-y {
+        color: var(--bulbe-amarelo);
+      }
+      .sub {
+        font-size: clamp(13.5px, 1.1vw, 16px);
+        color: var(--texto-suave);
+        font-weight: 400;
+        line-height: 1.45;
+        max-width: 72ch;
+        margin-bottom: 12px;
+      }
+      .content-z {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+      }
+
+      /* Animações Originais */
+      .track-animated [data-reveal] {
+        opacity: 0;
+        transform: translateY(16px);
+      }
+      .slide.is-active [data-reveal] {
+        animation: reveal 0.6s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+        animation-delay: calc(var(--d, 0) * 1ms);
+      }
+      @keyframes reveal {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .track-animated [data-reveal-x] {
+        opacity: 0;
+        transform: translateX(24px);
+      }
+      .slide.is-active [data-reveal-x] {
+        animation: revealX 0.65s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+        animation-delay: calc(var(--d, 0) * 1ms);
+      }
+      @keyframes revealX {
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      /* Grid e Componentes */
+      .cover {
+        display: grid;
+        grid-template-columns: 1.25fr 1fr;
+        align-items: center;
+        gap: 32px;
+      }
+      .cover__logo {
+        height: 48px;
+        margin-bottom: 12px;
+      }
+      .cover h1 {
+        font-size: clamp(32px, 3.8vw, 52px);
+        font-weight: 900;
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+      }
+      .cover__sub {
+        font-size: clamp(15px, 1.3vw, 18px);
+        color: var(--texto-suave);
+        margin: 10px 0 20px;
+        line-height: 1.4;
+      }
+      .squad {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        max-width: 550px;
+        margin-top: 14px;
+      }
+      .squad__title {
+        width: 100%;
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--bulbe-verde);
+        font-weight: 700;
+        margin-bottom: 2px;
+      }
+      .squad__name {
+        font-size: 12.5px;
+        font-weight: 600;
+        color: #fff;
+        padding: 6px 14px;
+        border-radius: 8px;
+        background: var(--azul-vidro);
+        border: 1px solid var(--azul-vidro-borda);
+      }
+      .mascot-stage {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+      }
+      .mascot {
+        width: 100%;
+        max-width: 320px;
+        height: 500px;
+        object-fit: contain;
+        z-index: 2;
+        filter: drop-shadow(0 20px 35px rgba(0, 0, 0, 0.35));
+        animation: bob 4s ease-in-out infinite;
+      }
+      @keyframes bob {
+        0%,
+        100% {
+          transform: translateY(0) rotate(-0.5deg);
+        }
+        50% {
+          transform: translateY(-12px) rotate(0.5deg);
+        }
+      }
+
+      .grid-2 {
+        display: grid;
+        grid-template-columns: 1.05fr 0.95fr;
+        gap: 48px;
+        align-items: center;
+      }
+      .bignum {
+        font-size: 88px;
+        font-weight: 900;
+        line-height: 0.85;
+        background: linear-gradient(180deg, #fff, var(--bulbe-amarelo));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .bignum small {
+        font-size: 20px;
+        -webkit-text-fill-color: var(--bulbe-amarelo);
+      }
+
+      .timeline {
+        position: relative;
+        padding: 6px 0;
+        margin: 16px 0 20px 0;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .timeline__bar {
+        height: 6px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.08);
+        position: relative;
+        overflow: hidden;
+      }
+      .timeline__fill {
+        position: absolute;
+        inset: 0;
+        width: 0;
+        background: linear-gradient(
+          90deg,
+          var(--bulbe-verde),
+          var(--bulbe-amarelo) 60%,
+          var(--bulbe-vermelho)
+        );
+        border-radius: 999px;
+        transition: width 1.2s cubic-bezier(0.3, 0.8, 0.3, 1) 0.1s;
+      }
+      .is-active .timeline__fill.run {
+        width: 100%;
+      }
+      .timeline__pts {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+      }
+      .timeline__pt b {
+        display: block;
+        font-size: 13px;
+        font-weight: 700;
+        line-height: 1.2;
+      }
+      .timeline__pt span {
+        font-size: 11px;
+        color: var(--texto-fraco);
+        display: block;
+        margin-top: 2px;
+      }
+
+      .pain-list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .pain {
+        display: flex;
+        gap: 12px;
+        padding: 12px 14px;
+        border-radius: 10px;
+        background: var(--azul-vidro);
+        border: 1px solid var(--azul-vidro-borda);
+      }
+      .pain__icon {
+        width: 32px;
+        height: 32px;
+        flex-shrink: 0;
+        border-radius: 8px;
+        display: grid;
+        place-items: center;
+        font-size: 14px;
+        font-weight: 700;
+        background: rgba(255, 255, 255, 0.04);
+        color: var(--bulbe-verde);
+        border: 1px solid var(--azul-vidro-borda);
+      }
+      .pain--crit {
+        border-left: 3px solid var(--bulbe-vermelho);
+      }
+      .pain b {
+        font-size: 14px;
+        font-weight: 700;
+      }
+      .pain p {
+        font-size: 12.5px;
+        color: var(--texto-suave);
+        margin-top: 1px;
+        line-height: 1.35;
+      }
+
+      /* Layout Original Slide 3 */
+      .hyp-flow {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin: 12px 0 20px;
+      }
+      .hyp-card {
+        flex: 1;
+        padding: 14px;
+        border-radius: 12px;
+        text-align: center;
+        background: var(--azul-vidro);
+        border: 1px solid var(--azul-vidro-borda);
+      }
+      .hyp-card b {
+        display: block;
+        font-size: 13.5px;
+        margin-bottom: 2px;
+      }
+      .hyp-card span {
+        display: block;
+        font-size: 11.5px;
+        color: var(--texto-suave);
+        line-height: 1.3;
+      }
+      .hyp-plus {
+        font-size: 18px;
+        color: var(--bulbe-verde);
+        font-weight: 800;
+      }
+      .hyp-result {
+        flex: 1.1;
+        padding: 16px;
+        border-radius: 12px;
+        text-align: center;
+        background: linear-gradient(
+          135deg,
+          var(--bulbe-verde),
+          var(--bulbe-verde-forte)
+        );
+        color: #04063f;
+      }
+      .hyp-result b {
+        color: #04063f;
+        font-weight: 800;
+        font-size: 15px;
+        display: block;
+      }
+      .hyp-result span {
+        color: rgba(4, 6, 63, 0.85);
+        font-weight: 600;
+        font-size: 12px;
+      }
+      .just-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+      }
+      .just {
+        padding: 14px;
+        border-radius: 10px;
+        background: var(--azul-vidro);
+        border: 1px solid var(--azul-vidro-borda);
+        border-top: 3px solid var(--bulbe-amarelo);
+      }
+      .just .n {
+        font-size: 10px;
+        font-weight: 800;
+        color: var(--bulbe-amarelo);
+        letter-spacing: 0.05em;
+      }
+      .just p {
+        font-size: 12.5px;
+        margin-top: 4px;
+        line-height: 1.35;
+        color: var(--texto-suave);
+      }
+
+      /* Iframe Original */
+      .solution {
+        display: grid;
+        grid-template-columns: 260px 1fr;
+        gap: 40px;
+        align-items: center;
+      }
+      .phone {
+        width: 250px;
+        height: 500px;
+        border-radius: 36px;
+        padding: 8px;
+        margin: 0 auto;
+        background: linear-gradient(160deg, #1a2270, #04063f);
+        box-shadow:
+          0 25px 50px rgba(0, 0, 0, 0.4),
+          inset 0 0 0 2px rgba(255, 255, 255, 0.08);
+        position: relative;
+      }
+      .phone__screen {
+        width: 100%;
+        height: 100%;
+        border-radius: 26px;
+        overflow: hidden;
+        background: #0a1080;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .phone__screen iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+        zoom: 0.6;
+        display: block;
+      }
+      .phone-halo {
+        position: absolute;
+        inset: -15px;
+        border-radius: 40px;
+        z-index: -1;
+        background: radial-gradient(
+          circle,
+          rgba(31, 205, 104, 0.2),
+          transparent 70%
+        );
+        filter: blur(12px);
+      }
+      .feat-list {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        max-width: 650px;
+      }
+      .feat {
+        display: flex;
+        gap: 12px;
+        padding: 14px;
+        border-radius: 10px;
+        background: var(--azul-vidro);
+        border: 1px solid var(--azul-vidro-borda);
+      }
+      .feat__num {
+        width: 32px;
+        height: 32px;
+        flex-shrink: 0;
+        border-radius: 8px;
+        display: grid;
+        place-items: center;
+        font-size: 13px;
+        font-weight: 900;
+        color: #04063f;
+        background: linear-gradient(
+          135deg,
+          var(--bulbe-verde),
+          var(--bulbe-amarelo)
+        );
+      }
+      .feat__tag {
+        font-size: 9.5px;
+        font-weight: 700;
+        color: var(--bulbe-amarelo);
+        border: 1px solid rgba(255, 212, 0, 0.2);
+        padding: 1px 6px;
+        border-radius: 4px;
+        background: rgba(255, 212, 0, 0.03);
+        margin-left: 8px;
+        text-transform: uppercase;
+      }
+      .feat b {
+        font-size: 14.5px;
+        font-weight: 800;
+      }
+      .feat p {
+        font-size: 12.5px;
+        color: var(--texto-suave);
+        margin-top: 2px;
+        line-height: 1.4;
+      }
+
+      /* Acessibilidade Original (Slide 12) */
+      .a11y {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+        margin-top: 10px;
+      }
+      .a11y-card {
+        padding: 20px 16px;
+        border-radius: 14px;
+        background: var(--azul-vidro);
+        border: 1px solid var(--azul-vidro-borda);
+      }
+      .a11y-card .ico {
+        width: 44px;
+        height: 44px;
+        border-radius: 10px;
+        display: grid;
+        place-items: center;
+        font-size: 20px;
+        margin-bottom: 12px;
+        background: rgba(31, 205, 104, 0.1);
+        border: 1px solid rgba(31, 205, 104, 0.2);
+      }
+      .a11y-card h3 {
+        font-size: 16px;
+        font-weight: 800;
+        margin-bottom: 6px;
+      }
+      .a11y-card p {
+        font-size: 12.5px;
+        color: var(--texto-suave);
+        line-height: 1.4;
+      }
+      .contrast-demo {
+        display: flex;
+        gap: 4px;
+        margin-top: 10px;
+      }
+      .contrast-demo span {
+        flex: 1;
+        padding: 6px;
+        border-radius: 4px;
+        font-size: 10px;
+        font-weight: 700;
+        text-align: center;
+      }
+      .demo-btn {
+        width: 100%;
+        padding: 10px;
+        border-radius: 8px;
+        background: var(--bulbe-azul);
+        color: #fff;
+        font-weight: 700;
+        font-size: 13px;
+        text-align: center;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        margin-top: 10px;
+      }
+
+      /* KPIs Originais (Slide 13) */
+      .kpis {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+        margin: 16px 0 24px;
+      }
+      .kpi {
+        padding: 20px 16px;
+        border-radius: 14px;
+        background: var(--azul-vidro);
+        border: 1px solid var(--azul-vidro-borda);
+      }
+      .kpi__tag {
+        font-size: 26px;
+        margin-bottom: 8px;
+      }
+      .kpi h3 {
+        font-size: 16px;
+        font-weight: 800;
+        margin-bottom: 4px;
+      }
+      .kpi h3 .arrow-down {
+        color: var(--bulbe-verde);
+      }
+      .kpi h3 .arrow-up {
+        color: var(--bulbe-amarelo);
+      }
+      .kpi p {
+        font-size: 12.5px;
+        color: var(--texto-suave);
+        line-height: 1.4;
+      }
+      .kpi--down {
+        border-top: 3px solid var(--bulbe-verde);
+      }
+      .kpi--up {
+        border-top: 3px solid var(--bulbe-amarelo);
+      }
+      .closing {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        padding: 16px 24px;
+        border-radius: 12px;
+        background: linear-gradient(
+          135deg,
+          rgba(31, 205, 104, 0.1),
+          rgba(255, 212, 0, 0.04)
+        );
+        border: 1px solid rgba(31, 205, 104, 0.25);
+        width: 100%;
+        margin-top: auto;
+      }
+      .mini-mascot {
+        width: 100px;
+        height: 100px;
+        object-fit: contain;
+      }
+      .closing__txt b {
+        font-size: 20px;
+        font-weight: 900;
+      }
+      .closing__txt span {
+        display: block;
+        font-size: 12.5px;
+        color: var(--texto-suave);
+        margin-top: 1px;
+      }
+      .closing img.logo {
+        height: 24px;
+        margin-left: auto;
+      }
+
+      /* Controles Globais */
+      .progress {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 4px;
+        background: var(--bulbe-verde);
+        z-index: 40;
+        transition: width 0.6s ease;
+        box-shadow: 0 0 12px var(--bulbe-verde);
+      }
+      .nav {
+        position: fixed;
+        bottom: 20px;
+        right: 32px;
+        z-index: 40;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+      .nav__btn {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: 1px solid var(--azul-vidro-borda);
+        background: var(--azul-vidro);
+        color: #fff;
+        font-size: 18px;
+        display: grid;
+        place-items: center;
+        cursor: pointer;
+        backdrop-filter: blur(8px);
+        transition: all 0.2s ease;
+      }
+      .nav__btn:hover {
+        background: var(--bulbe-verde);
+        color: #04063f;
+        border-color: var(--bulbe-verde);
+        transform: scale(1.05);
+      }
+      .nav__count {
+        font-size: 13px;
+        font-weight: 700;
+        color: var(--texto-suave);
+        min-width: 48px;
+        text-align: center;
+      }
+      .nav__count b {
+        color: #fff;
+      }
+      .dots {
+        position: fixed;
+        bottom: 24px;
+        left: 32px;
+        z-index: 40;
+        display: flex;
+        gap: 8px;
+      }
+      .dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.2);
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+      .dot.is-active {
+        background: var(--bulbe-verde);
+        transform: scale(1.25);
+        box-shadow: 0 0 8px var(--bulbe-verde);
+      }
+      .hint {
+        position: fixed;
+        bottom: 24px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 40;
+        font-size: 11px;
+        color: var(--texto-fraco);
+        letter-spacing: 0.05em;
+        animation: fadeHint 1s ease 3s forwards;
+        opacity: 1;
+      }
+      .hint kbd {
+        background: var(--azul-vidro);
+        border: 1px solid var(--azul-vidro-borda);
+        border-radius: 4px;
+        padding: 1px 5px;
+        font-family: inherit;
+        font-size: 10px;
+      }
+      @keyframes fadeHint {
+        to {
+          opacity: 0;
+          visibility: hidden;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="deck-bg"></div>
+    <div class="progress" id="progress"></div>
+    <div class="brandbar">
+      <img
+        src="../public/logo.png"
+        alt="Bulbe Energia"
+        onerror="this.style.display = 'none'"
+      />
+      <span class="squad-chip">Squad Matrix · Ibmec 2026.1</span>
+    </div>
+
+    <div class="deck">
+      <div class="track track-animated" id="track">
+        <section class="slide cover">
+          <div class="content-z">
+            <img
+              class="cover__logo"
+              src="../public/logo.png"
+              alt="Bulbe"
+              data-reveal
+              style="--d: 0"
+              onerror="this.style.display = 'none'"
+            />
+            <h1 data-reveal style="--d: 120">
+              Inovação na <span class="accent">Jornada do Cliente</span>
+            </h1>
+            <p class="cover__sub" data-reveal style="--d: 240">
+              Solução de Interface Mobile para a Fase de
+              <b style="color: #fff">Homologação</b> da Bulbe Energia.
+            </p>
+
+            <div class="squad" data-reveal style="--d: 360">
+              <span class="squad__title">Squad Matrix</span>
+              <span class="squad__name">Felipe Lara</span>
+              <span class="squad__name">Fernanda Dutra</span>
+              <span class="squad__name">Leandro Dias</span>
+              <span class="squad__name">Mariana Maia</span>
+              <span class="squad__name">Pedro Melo</span>
+              <span class="squad__name">Rafael Bentes</span>
+            </div>
+
+            <div
+              class="squad"
+              data-reveal
+              style="--d: 460"
+              style="margin-top: 24px"
+            >
+              <span class="squad__title">Professores Orientadores</span>
+              <span
+                class="squad__name"
+                style="border-color: var(--bulbe-amarelo)"
+                >Cristiano Macedo</span
+              >
+              <span
+                class="squad__name"
+                style="border-color: var(--bulbe-amarelo)"
+                >Daniel Gamarano</span
+              >
+            </div>
+          </div>
+        </section>
+
+        <section class="slide">
+          <span class="slide-num">02</span>
+          <div class="content-z">
+            <span class="eyebrow" data-reveal
+              >O Contexto e a Dor do Negócio</span
+            >
+            <h2 class="headline" data-reveal style="--d: 80">
+              O Gargalo dos <span class="accent-y">90 Dias</span>
+            </h2>
+            <div class="grid-2">
+              <div>
+                <div class="bignum" data-reveal style="--d: 140">
+                  <span data-count="90" data-suffix="">0</span
+                  ><small> dias</small>
+                </div>
+                <p class="sub" data-reveal style="--d: 200; margin-top: 2px">
+                  A homologação regulatória junto à CEMIG demanda de
+                  <b style="color: #fff">90 a 120 dias</b>, gerando um hiato
+                  inativo crítico para a retenção inicial.
+                </p>
+                <div class="timeline" data-reveal style="--d: 260">
+                  <div class="timeline__bar">
+                    <div class="timeline__fill" id="t2fill"></div>
+                  </div>
+                  <div class="timeline__pts">
+                    <div class="timeline__pt">
+                      <b class="accent">Dia 0</b><span>Adesão</span>
+                    </div>
+                    <div class="timeline__pt">
+                      <b>Vácuo Operacional</b><span>Sem feedback</span>
+                    </div>
+                    <div class="timeline__pt">
+                      <b style="color: var(--bulbe-vermelho)">~120</b
+                      ><span>1ª Cobrança</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="pain-list">
+                <div class="pain pain--crit" data-reveal style="--d: 180">
+                  <div class="pain__icon">1</div>
+                  <div>
+                    <b>Esquecimento Contratual</b>
+                    <p>
+                      Meses de espera ociosa causam o desengajamento da
+                      assinatura.
+                    </p>
+                  </div>
+                </div>
+                <div class="pain pain--crit" data-reveal style="--d: 240">
+                  <div class="pain__icon">2</div>
+                  <div>
+                    <b>Insegurança e Desconfiança</b>
+                    <p>
+                      A falta de feedback ativo faz o cliente duvidar da
+                      eficiência da plataforma.
+                    </p>
+                  </div>
+                </div>
+                <div class="pain pain--crit" data-reveal style="--d: 360">
+                  <div class="pain__icon">3</div>
+                  <div>
+                    <b>Inadimplência Crítica Inicial</b>
+                    <p>
+                      Clientes não pagam o boleto inicial por estranharem a
+                      cobrança tardia.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="slide">
+          <span class="slide-num">03</span>
+          <div class="content-z">
+            <span class="eyebrow" data-reveal>Hipótese e Estratégia</span>
+            <h2 class="headline" data-reveal style="--d: 80">
+              Transformando <span class="accent">Espera</span> em
+              <span class="accent-y">Valor Percebido</span>
+            </h2>
+            <p class="sub" data-reveal style="--d: 120">
+              Se oferecermos acompanhamento em tempo real + simulações claras +
+              benefícios antes do faturamento, reduzimos a ansiedade e engajamos
+              o cliente no app.
+            </p>
+            <div class="hyp-flow">
+              <div class="hyp-card" data-reveal style="--d: 180">
+                <b>Acompanhamento</b
+                ><span>Status em tempo real da homologação</span>
+              </div>
+              <div class="hyp-plus" data-reveal style="--d: 240">+</div>
+              <div class="hyp-card" data-reveal style="--d: 280">
+                <b>Simulação</b><span>Economia clara antes da 1ª fatura</span>
+              </div>
+              <div class="hyp-plus" data-reveal style="--d: 320">+</div>
+              <div class="hyp-card" data-reveal style="--d: 360">
+                <b>Benefícios</b><span>Vantagens reais imediatas</span>
+              </div>
+              <div class="hyp-plus" data-reveal style="--d: 400">→</div>
+              <div class="hyp-result" data-reveal style="--d: 440">
+                <b>Engajamento</b><span>Menos ansiedade, mais confiança</span>
+              </div>
+            </div>
+            <div class="just-grid">
+              <div class="just" data-reveal style="--d: 500">
+                <span class="n">01 · NEGÓCIO</span>
+                <p>Proteção do faturamento recorrente da Bulbe.</p>
+              </div>
+              <div class="just" data-reveal style="--d: 560">
+                <span class="n">02 · OPERAÇÃO</span>
+                <p>
+                  Redução drástica do esforço e custo de atendimento manual.
+                </p>
+              </div>
+              <div class="just" data-reveal style="--d: 620">
+                <span class="n">03 · RELAÇÃO</span>
+                <p>Confiança imediata com as Classes B, C e D.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="slide">
+          <span class="slide-num">04</span>
+          <div class="content-z grid-2">
+            <div class="mascot-stage" data-reveal style="--d: 100">
+              <img
+                class="mascot"
+                src="../public/bulbinho-feliz.png"
+                alt="Bulbinho Sorrindo Alegre"
+                onerror="
+                  this.src =
+                    'https://placehold.co/320x450/1fcd68/ffffff?text=Bulbinho'
+                "
+              />
+            </div>
+            <div>
+              <span class="eyebrow" data-reveal>O Rosto da Marca</span>
+              <h2 class="headline" data-reveal style="--d: 80">
+                Olá, eu sou o <span class="accent">Bulbinho!</span>
+              </h2>
+              <p class="sub" data-reveal style="--d: 140">
+                Criado para humanizar a tecnologia e ser o guia do cliente na
+                jornada de energia limpa.
+              </p>
+
+              <div class="pain-list" style="margin-top: 20px">
+                <div
+                  class="pain"
+                  data-reveal
+                  style="--d: 200"
+                  style="border-left: 3px solid var(--bulbe-amarelo)"
+                >
+                  <div
+                    class="pain__icon"
+                    style="
+                      color: var(--bulbe-amarelo);
+                      border-color: rgba(255, 212, 0, 0.2);
+                    "
+                  >
+                    💡
+                  </div>
+                  <div>
+                    <b>A Importância de ter um Mascote</b>
+                    <p>
+                      O mascote quebra a barreira técnica e cria identificação.
+                      Ele aproxima a marca do usuário, gerando confiança e
+                      empatia em um setor tradicionalmente complexo e frio.
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="pain"
+                  data-reveal
+                  style="--d: 280"
+                  style="border-left: 3px solid var(--bulbe-verde)"
+                >
+                  <div
+                    class="pain__icon"
+                    style="
+                      color: var(--bulbe-verde);
+                      border-color: rgba(31, 205, 104, 0.2);
+                    "
+                  >
+                    👆
+                  </div>
+                  <div>
+                    <b>Como eu sou acionado?</b>
+                    <p>
+                      Atuo como um assistente contextual. O Bulbinho aparece em
+                      <i>tooltips</i> (dicas interativas) para explicar
+                      informações difíceis (como taxas da distribuidora)
+                      exatamente na hora que o usuário tem dúvidas.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="slide">
+          <span class="slide-num">05</span>
+          <div class="content-z solution">
+            <div data-reveal style="--d: 100">
+              <div class="phone">
+                <div class="phone-halo"></div>
+                <div class="phone__screen">
+                  <iframe
+                    data-src="../src/index.html"
+                    title="Onboarding Interativo"
+                    scrolling="no"
+                  ></iframe>
+                </div>
+              </div>
+            </div>
+            <div>
+              <span class="eyebrow" data-reveal-x style="--d: 60"
+                >Solução de Interface Unificada</span
+              >
+              <h2 class="headline" data-reveal-x style="--d: 120">
+                A Jornada <span class="accent">Completa</span> do Usuário
+              </h2>
+              <div class="feat-list">
+                <div class="feat" data-reveal-x style="--d: 180">
+                  <div class="feat__num">1</div>
+                  <div>
+                    <b>Onboarding Didático</b
+                    ><span class="feat__tag">Transparência</span>
+                    <p>
+                      Explicação visual em 3 passos de como o desconto é gerado
+                      e injetado na conta de luz, alinhando as expectativas
+                      desde o início.
+                    </p>
+                  </div>
+                </div>
+                <div class="feat" data-reveal-x style="--d: 240">
+                  <div class="feat__num">2</div>
+                  <div>
+                    <b>Status em Tempo Real</b
+                    ><span class="feat__tag">Fim da Ansiedade</span>
+                    <p>
+                      O cliente sabe exatamente em qual etapa (Bulbe ou CEMIG)
+                      sua solicitação está, reduzindo a ansiedade e chamados no
+                      suporte.
+                    </p>
+                  </div>
+                </div>
+                <div class="feat" data-reveal-x style="--d: 300">
+                  <div class="feat__num">3</div>
+                  <div>
+                    <b>Clube de Benefícios</b
+                    ><span class="feat__tag">Engajamento</span>
+                    <p>
+                      "Impulsione sua primeira fatura" liberando parcerias com
+                      cashback e descontos. O usuário se acostuma a abrir o app
+                      antes mesmo de pagar.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="slide">
+          <span class="slide-num">06</span>
+          <div class="content-z">
+            <span class="eyebrow" data-reveal
+              >Diferenciais de Acessibilidade Mobile</span
+            >
+            <h2 class="headline" data-reveal style="--d: 80">
+              Design Inclusivo
+              <span class="accent">para Todos os Públicos</span>
+            </h2>
+            <p class="sub" data-reveal style="--d: 140">
+              Pensado para usuários reais, focando em simplicidade e clareza
+              para qualquer dispositivo de entrada.
+            </p>
+            <div class="a11y">
+              <div class="a11y-card" data-reveal style="--d: 220">
+                <div class="ico">🔆</div>
+                <h3>Contraste WCAG</h3>
+                <p>
+                  Cores institucionais aplicadas com alto contraste para
+                  garantir leitura nítida.
+                </p>
+                <div class="contrast-demo">
+                  <span style="background: var(--bulbe-azul); color: #fff"
+                    >AA ✓</span
+                  >
+                  <span style="background: var(--bulbe-verde); color: #04063f"
+                    >AA ✓</span
+                  >
+                  <span style="background: var(--bulbe-amarelo); color: #04063f"
+                    >AA ✓</span
+                  >
+                </div>
+              </div>
+              <div class="a11y-card" data-reveal style="--d: 320">
+                <div class="ico">💬</div>
+                <h3>Linguagem humanizada</h3>
+                <p>
+                  O mascote Bulbinho traduz conceitos regulatórios e fiscais
+                  complexos em diálogos simples.
+                </p>
+              </div>
+              <div class="a11y-card" data-reveal style="--d: 420">
+                <div class="ico">👆</div>
+                <h3>Botões ampliados</h3>
+                <p>
+                  Elementos de clique grandes e full-width, fáceis de tocar em
+                  celulares Android de entrada.
+                </p>
+                <div class="demo-btn">Quero economizar →</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="slide">
+          <span class="slide-num">07</span>
+          <div class="content-z">
+            <span class="eyebrow" data-reveal
+              >Conclusão e Impacto nos KPIs</span
+            >
+            <h2 class="headline" data-reveal style="--d: 60">
+              Resultados Esperados <span class="accent">para a Bulbe</span>
+            </h2>
+            <div class="kpis">
+              <div class="kpi kpi--down" data-reveal style="--d: 140">
+                <div class="kpi__tag">📉</div>
+                <h3>
+                  <span class="arrow-down">Redução</span> da Inadimplência
+                </h3>
+                <p>
+                  O acompanhamento transparente elimina a desconfiança no
+                  recebimento da primeira conta.
+                </p>
+              </div>
+              <div class="kpi kpi--down" data-reveal style="--d: 200">
+                <div class="kpi__tag">📉</div>
+                <h3><span class="arrow-down">Queda</span> no Churn Precoce</h3>
+                <p>
+                  O Clube de Benefícios retém o cliente engajado durante os 90
+                  dias de espera da distribuidora.
+                </p>
+              </div>
+              <div class="kpi kpi--up" data-reveal style="--d: 260">
+                <div class="kpi__tag">📈</div>
+                <h3>
+                  <span class="arrow-up">Aumento</span> em NPS e Engajamento
+                </h3>
+                <p>
+                  Transforma uma experiência frustrante em um ecossistema
+                  digital transparente e focado no usuário.
+                </p>
+              </div>
+            </div>
+            <div class="closing" data-reveal style="--d: 340">
+              <img
+                class="mini-mascot"
+                src="../public/bulbinho-normal.png"
+                alt="Bulbinho Feliz"
+                onerror="
+                  this.src = 'https://placehold.co/100x100/1fcd68/ffffff?text=B'
+                "
+              />
+              <div class="closing__txt">
+                <b>Obrigado! 💚</b>
+                <span
+                  >Squad Matrix — Ibmec 2026.1 · Felipe Lara · Fernanda Dutra ·
+                  Leandro Dias · Mariana Maia · Pedro Melo · Rafael Bentes</span
+                >
+              </div>
+              <img
+                class="logo"
+                src="../public/logo.png"
+                alt="Bulbe Energia"
+                onerror="this.style.display = 'none'"
+              />
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <div class="dots" id="dots"></div>
+    <div class="hint">
+      Use <kbd>←</kbd> <kbd>→</kbd> ou <kbd>espaço</kbd> para navegar
+    </div>
+    <div class="nav">
+      <button class="nav__btn" id="prev" aria-label="Anterior">‹</button>
+      <span class="nav__count"
+        ><b id="cur">1</b> / <span id="total">7</span></span
+      >
+      <button class="nav__btn" id="next" aria-label="Próximo">›</button>
+    </div>
+
+    <script>
+      const track = document.getElementById("track");
+      const slides = Array.from(track.children);
+      const total = slides.length;
+      let current = 0;
+      const isMobile = () => window.innerWidth <= 768;
+      const dotsWrap = document.getElementById("dots");
+
+      slides.forEach((_, i) => {
+        const d = document.createElement("div");
+        d.className = "dot";
+        d.addEventListener("click", () => go(i));
+        dotsWrap.appendChild(d);
+      });
+      const dots = Array.from(dotsWrap.children);
+      document.getElementById("total").textContent = total;
+
+      function go(i) {
+        current = Math.max(0, Math.min(total - 1, i));
+        if (isMobile()) {
+          slides[current].scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        } else {
+          track.style.transform = `translateX(-${current * 100}vw)`;
+        }
+        slides.forEach((s, idx) =>
+          s.classList.toggle("is-active", idx === current),
+        );
+        dots.forEach((d, idx) =>
+          d.classList.toggle("is-active", idx === current),
+        );
+        document.getElementById("cur").textContent = current + 1;
+        document.getElementById("progress").style.width =
+          `${((current + 1) / total) * 100}%`;
+        activate(slides[current]);
+      }
+
+      function activate(slide) {
+        slide.querySelectorAll("[data-count]").forEach((el) => {
+          const target = +el.dataset.count;
+          const suffix = el.dataset.suffix || "";
+          let start = null;
+          const dur = 1200;
+          function step(ts) {
+            if (!start) start = ts;
+            const p = Math.min((ts - start) / dur, 1);
+            const eased = 1 - Math.pow(1 - p, 3);
+            el.textContent = Math.round(eased * target) + suffix;
+            if (p < 1) requestAnimationFrame(step);
+          }
+          requestAnimationFrame(step);
+        });
+        slide.querySelectorAll(".bar-fill, .timeline__fill").forEach((b) => {
+          b.classList.remove("run");
+          void b.offsetWidth;
+          setTimeout(() => b.classList.add("run"), 150);
+        });
+        slide.querySelectorAll("iframe[data-src]").forEach((f) => {
+          if (!f.src) f.src = f.dataset.src;
+        });
+      }
+
+      document
+        .getElementById("next")
+        .addEventListener("click", () => go(current + 1));
+      document
+        .getElementById("prev")
+        .addEventListener("click", () => go(current - 1));
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "ArrowRight" || e.key === " " || e.key === "PageDown") {
+          e.preventDefault();
+          go(current + 1);
+        } else if (e.key === "ArrowLeft" || e.key === "PageUp") {
+          e.preventDefault();
+          go(current - 1);
+        } else if (e.key === "Home") go(0);
+        else if (e.key === "End") go(total - 1);
+      });
+      window.addEventListener("resize", () => {
+        if (!isMobile())
+          track.style.transform = `translateX(-${current * 100}vw)`;
+        else track.style.transform = "";
+      });
+      go(0);
+    </script>
+  </body>
+</html>
